@@ -5,6 +5,7 @@ import { Lock, ScanLine, ClipboardCheck, Smartphone, ShieldAlert } from 'lucide-
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import { featurePillars, techStack } from '@/data/features';
 import { backdrops } from '@/data/backgrounds';
+import SoteriaFieldRoadmap from './SoteriaFieldRoadmap';
 import { useState } from 'react';
 
 const fieldCapabilities = [
@@ -49,7 +50,7 @@ export default function ProductOverview() {
           codebase.
         </>
       }
-      description="Six platform pillars plus Soteria Field — a productized Lockout/Tagout (LOTO) module that takes the platform onto the production floor. Hover any pillar card to expand its detail."
+      description="Six platform pillars, plus Soteria Field — a productized Lockout/Tagout (LOTO) module today, and a full ISO-aligned environmental compliance suite next. Hover any pillar card to expand its detail; click any roadmap module to see the regulations and features behind it."
       backdrop={backdrops.product}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -214,6 +215,9 @@ export default function ProductOverview() {
           </div>
         </div>
       </motion.div>
+
+      {/* Soteria Field — Coming Soon: Environmental modules roadmap */}
+      <SoteriaFieldRoadmap />
 
       {/* Tech stack badges */}
       <motion.div
