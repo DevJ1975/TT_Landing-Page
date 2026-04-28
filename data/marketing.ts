@@ -30,7 +30,7 @@ export const marketingChannels: MarketingItem[] = [
     id: 'content',
     title: 'Content Marketing',
     description:
-      'EHS compliance blog and LinkedIn thought leadership authored by Jay (OSHA-credentialed). 1 anchor article + 3 short posts per month.',
+      'EHS compliance blog and LinkedIn thought leadership authored by Jamil (OSHA-credentialed). 1 anchor article + 3 short posts per month.',
     channel: 'private',
     priority: 'Medium',
   },

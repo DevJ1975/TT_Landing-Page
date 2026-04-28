@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion';
 import {
   GraduationCap,
-  Scale,
-  Camera,
   Code2,
   Star,
   HardHat,
@@ -15,11 +13,9 @@ import {
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import { backdrops } from '@/data/backgrounds';
 
-const jayCreds = [
+const founderCreds = [
   { icon: GraduationCap, label: 'MBA' },
-  { icon: Scale, label: 'JD Candidate (Entertainment Law)' },
   { icon: HardHat, label: 'OSHA 500 / 501 Path' },
-  { icon: Camera, label: 'Motion Graphics · VFX · Film Editing' },
   { icon: Code2, label: 'Full-Stack Developer (Code Platoon 2026)' },
   { icon: Star, label: 'Veteran · SDVOSB Certified' },
 ];
@@ -43,7 +39,7 @@ const partners = [
 
 const advantages = [
   'SDVOSB set-aside eligibility',
-  'Domain expertise: EHS + instructional design + media production + engineering',
+  'Domain expertise: EHS + instructional design + engineering',
   'Active enterprise pipeline (3 accounts)',
   'FedRAMP-aligned from day one',
   'Bootstrapped — lean and capital-efficient',
@@ -60,7 +56,7 @@ export default function Team() {
           Why <span className="text-gradient">Trainovate wins</span> in a market of generalists.
         </>
       }
-      description="The unfair advantage isn't a single skill — it's the stacking of EHS credentials, instructional design, media production, and engineering inside one founder, supported by a federal teaming partner who owns capture on the buyer's side of the table."
+      description="The unfair advantage isn't a single skill — it's the stacking of EHS credentials, instructional design, and engineering inside one founder, supported by a federal teaming partner who owns capture on the buyer's side of the table."
       backdrop={backdrops.team}
     >
       {/* Founder spotlight */}
@@ -81,16 +77,15 @@ export default function Team() {
               </span>
             </div>
             <h3 className="font-display text-4xl lg:text-5xl font-bold text-white mb-3 leading-[1.05]">
-              Jay Jones
+              Jamil Jones
             </h3>
             <p className="text-slate-300 leading-relaxed mb-6">
               Builder, operator, and OSHA-credentialed instructor turning a stack of unrelated
               skills into a workforce-learning OS.
             </p>
             <p className="text-sm text-slate-400 leading-relaxed">
-              Ten-plus years of EHS and OSHA training, a media-production background that
-              produces in-house course assets, and an engineering trajectory that reduces
-              dependency on outside dev shops. Bootstrapping discipline keeps Trainovate
+              Ten-plus years of EHS and OSHA training plus an engineering trajectory that
+              reduces dependency on outside dev shops. Bootstrapping discipline keeps Trainovate
               capital-efficient.
             </p>
           </div>
@@ -100,7 +95,7 @@ export default function Team() {
               Credentials &amp; Skills
             </span>
             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {jayCreds.map(({ icon: Icon, label }, i) => (
+              {founderCreds.map(({ icon: Icon, label }, i) => (
                 <motion.div
                   key={label}
                   initial={{ opacity: 0, x: 10 }}

@@ -168,18 +168,18 @@ export default function Partnership() {
             <div className="space-y-4 flex-1">
               <div>
                 <p className="text-sm text-slate-400 mb-1">Founder, CEO</p>
-                <p className="font-display text-xl font-semibold text-white">Jay Jones</p>
+                <p className="font-display text-xl font-semibold text-white">Jamil Jones</p>
               </div>
 
               <ul className="space-y-3 pt-2 border-t border-white/5">
                 <li>
                   <a
-                    href="mailto:jay@trainovate.com"
+                    href="mailto:jamil@trainovate.com"
                     className="flex items-center gap-3 text-sm text-slate-200 hover:text-accent transition-colors group"
                   >
                     <Mail className="h-4 w-4 text-accent" />
                     <span className="border-b border-transparent group-hover:border-accent">
-                      jay@trainovate.com
+                      jamil@trainovate.com
                     </span>
                   </a>
                 </li>
