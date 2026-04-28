@@ -3,6 +3,7 @@
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import MilestoneTimeline from '@/components/ui/MilestoneTimeline';
 import { roadmap } from '@/data/roadmap';
+import { backdrops } from '@/data/backgrounds';
 
 export default function Roadmap2026() {
   return (
@@ -17,6 +18,7 @@ export default function Roadmap2026() {
         </>
       }
       description="Click any milestone to expand detail. Click status badges to cycle through Planned → In Progress → Complete — the timeline updates live."
+      backdrop={backdrops.roadmap}
     >
       <MilestoneTimeline quarters={roadmap} />
 

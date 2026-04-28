@@ -11,6 +11,7 @@ import {
   pricingTiers,
   privateMetrics,
 } from '@/data/gtm-private';
+import { backdrops } from '@/data/backgrounds';
 
 const verticalIcons: Record<string, typeof Building2> = {
   manufacturing: Building2,
@@ -32,6 +33,7 @@ export default function PrivateSectorGTM() {
         </>
       }
       description="Soteria enters the enterprise via the relationship Trainovate already owns: safety consulting and OSHA training. Every consulting engagement is also a Soteria discovery call."
+      backdrop={backdrops.privateGtm}
     >
       {/* Verticals */}
       <div className="mb-16">

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ReactNode } from 'react';
+import IndustrialBackdrop from './IndustrialBackdrop';
 
 type Props = {
   id: string;
@@ -12,6 +13,10 @@ type Props = {
   children: ReactNode;
   variant?: 'blue' | 'gold';
   className?: string;
+  /** Optional Unsplash / local URL for an industrial backdrop image. */
+  backdrop?: string;
+  backdropOpacity?: number;
+  backdropPosition?: string;
 };
 
 export default function SectionWrapper({
@@ -23,18 +28,28 @@ export default function SectionWrapper({
   children,
   variant = 'blue',
   className = '',
+  backdrop,
+  backdropOpacity,
+  backdropPosition,
 }: Props) {
-  const accentColor =
-    variant === 'gold' ? 'text-gold' : 'text-accent';
-  const accentDot =
-    variant === 'gold' ? 'bg-gold' : 'bg-accent';
+  const accentColor = variant === 'gold' ? 'text-gold' : 'text-accent';
+  const accentDot = variant === 'gold' ? 'bg-gold' : 'bg-accent';
 
   return (
     <section
       id={id}
-      className={`relative w-full px-6 py-24 md:py-32 lg:px-12 ${className}`}
+      className={`relative isolate w-full px-6 py-24 md:py-32 lg:px-12 overflow-hidden ${className}`}
     >
-      <div className="mx-auto max-w-7xl">
+      {backdrop && (
+        <IndustrialBackdrop
+          src={backdrop}
+          opacity={backdropOpacity ?? 0.4}
+          position={backdropPosition}
+          variant={variant === 'gold' ? 'gold' : 'navy'}
+        />
+      )}
+
+      <div className="relative z-10 mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -43,9 +58,7 @@ export default function SectionWrapper({
           className="mb-12 md:mb-16"
         >
           <div className="flex items-center gap-3 mb-5">
-            <span className={`font-mono text-xs tracking-[0.2em] ${accentColor}`}>
-              {number}
-            </span>
+            <span className={`font-mono text-xs tracking-[0.2em] ${accentColor}`}>{number}</span>
             <span className={`h-1 w-1 rounded-full ${accentDot}`} />
             <span className="font-mono text-xs uppercase tracking-[0.25em] text-slate-400">
               {eyebrow}

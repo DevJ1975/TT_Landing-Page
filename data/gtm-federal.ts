@@ -96,7 +96,7 @@ export const federalGTMSteps: FederalGTMStep[] = [
     step: 3,
     title: 'Synergy Leads Capture / BD Relationships',
     detail:
-      'DeQuincy and Synergy Federal Group own customer access — OSDBU intros, vendor days, and pre-RFP shaping conversations.',
+      'Synergy Federal Group owns customer access — OSDBU intros, vendor days, and pre-RFP shaping conversations.',
   },
   {
     step: 4,

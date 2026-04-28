@@ -13,6 +13,7 @@ import {
   Calendar,
 } from 'lucide-react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
+import { backdrops } from '@/data/backgrounds';
 
 type TabId = 'strategic' | 'federal' | 'investor' | 'enterprise';
 
@@ -84,6 +85,7 @@ export default function Partnership() {
         </>
       }
       description="Whether you're a strategic platform, a federal teaming partner, an investor, or an enterprise looking for a pilot — here is the specific shape of the conversation we want to have with you."
+      backdrop={backdrops.partnership}
     >
       {/* Tabs */}
       <div className="flex flex-wrap gap-2 mb-8">

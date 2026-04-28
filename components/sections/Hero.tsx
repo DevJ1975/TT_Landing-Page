@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import { ChevronDown, ShieldCheck, Star } from 'lucide-react';
 import Badge from '@/components/ui/Badge';
+import IndustrialBackdrop from '@/components/ui/IndustrialBackdrop';
+import { backdrops } from '@/data/backgrounds';
 
 export default function Hero() {
   const scrollNext = () => {
@@ -12,9 +14,12 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden"
+      className="relative isolate min-h-screen w-full flex items-center justify-center overflow-hidden"
     >
-      {/* Animated grid */}
+      {/* Industrial command-center photograph (B&W, 40% opacity) */}
+      <IndustrialBackdrop src={backdrops.hero} opacity={0.4} />
+
+      {/* Animated grid (over the photo, under content) */}
       <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       <div className="absolute inset-0 grid-bg-fine opacity-50 [mask-image:radial-gradient(ellipse_at_center,black_15%,transparent_60%)]" />
 

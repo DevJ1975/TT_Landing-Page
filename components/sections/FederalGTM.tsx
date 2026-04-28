@@ -10,6 +10,7 @@ import {
   federalGTMSteps,
   fedRampPillars,
 } from '@/data/gtm-federal';
+import { backdrops } from '@/data/backgrounds';
 
 const statusStyle: Record<string, string> = {
   Active: 'bg-emerald-500/10 border-emerald-500/40 text-emerald-300',
@@ -31,6 +32,7 @@ export default function FederalGTM() {
         </>
       }
       description="Trainovate's federal play is purpose-built around the SDVOSB set-aside ladder. Synergy Federal Group leads capture; Trainovate delivers the technical solution."
+      backdrop={backdrops.federalGtm}
     >
       {/* JV diagram */}
       <div className="mb-14">
@@ -89,7 +91,7 @@ export default function FederalGTM() {
               <h4 className="font-display text-xl font-bold text-white">Synergy Federal Group</h4>
               <p className="text-sm text-slate-300 mt-1">Capture Lead</p>
               <p className="text-xs text-gold font-mono mt-2 tracking-[0.15em] uppercase">
-                PhD Cybersecurity · Retired Army
+                Federal BD · Cybersecurity
               </p>
             </motion.div>
           </div>
