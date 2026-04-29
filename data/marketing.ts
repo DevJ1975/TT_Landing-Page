@@ -54,7 +54,7 @@ export const marketingChannels: MarketingItem[] = [
     id: 'case-studies',
     title: 'Case Studies',
     description:
-      'Snak King and StandardAero case studies once pilots produce measurable compliance lift. Use as sales assets and PR.',
+      'Anchor case studies stood up as soon as the first pilots produce measurable compliance lift. Use as sales assets and PR; reusable template ready Q1.',
     channel: 'private',
     priority: 'Medium',
   },

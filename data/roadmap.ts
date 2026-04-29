@@ -30,17 +30,17 @@ export const roadmap: Quarter[] = [
         status: 'in-progress',
       },
       {
-        id: 'q1-snak',
-        title: 'Snak King Pilot Onboarding',
+        id: 'q1-mfg-pilot',
+        title: 'Manufacturing Anchor Pilot — Outbound',
         detail:
-          'First plant onboarded: priority OSHA + GMP courses migrated, RBAC configured, supervisors trained, baseline compliance metrics captured.',
-        status: 'in-progress',
+          'Mid-market food-production and manufacturing outbound campaign. Goal: one signed 30-day pilot agreement with priority OSHA + GMP courses migrated and baseline compliance metrics captured.',
+        status: 'planned',
       },
       {
-        id: 'q1-saero',
-        title: 'StandardAero Demo + Proposal',
+        id: 'q1-mro-demo',
+        title: 'MRO Demo Pipeline',
         detail:
-          'Tablet-led demo to MRO leadership. Proposal includes iPad field-app preview and multi-line rollout plan.',
+          'Tablet-led demos to regional aviation / aerospace MRO operators. Proposals include iPad field-app preview and multi-line rollout plan.',
         status: 'planned',
       },
       {
@@ -58,10 +58,10 @@ export const roadmap: Quarter[] = [
         status: 'complete',
       },
       {
-        id: 'q1-cp',
-        title: 'Code Platoon Enrollment Prep',
+        id: 'q1-content',
+        title: 'Anchor Content + Case Study Template',
         detail:
-          'Pre-work modules complete, June cohort confirmed, schedule blocked against client commitments.',
+          'EHS thought-leadership cadence locked (1 long-form + 3 LinkedIn posts / month) and a reusable case-study template ready to drop in once the first pilot produces metrics.',
         status: 'in-progress',
       },
     ],
@@ -101,17 +101,17 @@ export const roadmap: Quarter[] = [
         status: 'planned',
       },
       {
-        id: 'q2-cp',
-        title: 'Code Platoon Begins (June)',
+        id: 'q2-2nd-pilot',
+        title: 'Second Vertical Pilot Proposal',
         detail:
-          'Founder enters intensive full-stack engineering program. Pre-staffed delivery coverage for active clients.',
+          'Formal pilot proposal into a second priority vertical (logistics or industrial services), built on Q1 pilot learnings.',
         status: 'planned',
       },
       {
-        id: 'q2-unfi',
-        title: 'UNFI Pilot Proposal',
+        id: 'q2-field-alpha',
+        title: 'Soteria Field Alpha (LOTO Module)',
         detail:
-          'Formal pilot proposal to UNFI distribution leadership building on Snak King reference.',
+          'Internal alpha of the LOTO field app: energy-source isolation workflow, QR + photo verification, authorized / affected sign-off.',
         status: 'planned',
       },
     ],
@@ -133,7 +133,7 @@ export const roadmap: Quarter[] = [
         id: 'q3-ipad',
         title: 'Soteria iPad Field App (SwiftUI) Beta',
         detail:
-          'Native iPad app: offline course playback, photo-based competency capture, supervisor sign-off. Beta with StandardAero and Snak King.',
+          'Native iPad app: offline course playback, photo-based competency capture, supervisor sign-off. Beta with active pilot customers.',
         status: 'planned',
       },
       {
@@ -176,14 +176,14 @@ export const roadmap: Quarter[] = [
         id: 'q4-anchor',
         title: 'Enterprise Contract Signed (Anchor Client)',
         detail:
-          'Convert one pipeline account (Snak King / StandardAero / UNFI) into multi-site annual contract.',
+          'Convert the strongest pilot relationship into a multi-site annual contract — Trainovate’s first signed enterprise anchor.',
         status: 'planned',
       },
       {
-        id: 'q4-cp',
-        title: 'Code Platoon Graduation (December)',
+        id: 'q4-env-beta',
+        title: 'Soteria Field — Environmental Beta',
         detail:
-          'Founder completes full-stack engineering program. Trainovate product engineering capacity steps up.',
+          'Public beta of the first three environmental modules: Chemical Spill Log, Hazardous Waste Accumulation Tracker, and SWPPP Inspection Log.',
         status: 'planned',
       },
       {

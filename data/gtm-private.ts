@@ -12,23 +12,23 @@ export const privateVerticals: PrivateVertical[] = [
   {
     id: 'manufacturing',
     name: 'Manufacturing & Food Production',
-    pipeline: 'Snak King, UNFI',
+    pipeline: 'Outbound prospecting',
     description:
       'High-volume production environments with continuous OSHA, GMP, and food-safety training requirements. Soteria replaces binders, paper sign-offs, and disconnected LMSs with a single audit-ready system.',
     contacts: 'EHS Directors, Plant Managers, HR / Training VPs',
     strategy:
-      'Land via OSHA 10/30 training engagement → diagnose compliance gaps → 30-day pilot in one facility → rollout across plants. Snak King is in active onboarding; UNFI proposal Q2 2026.',
+      'Land via OSHA 10/30 training engagement → diagnose compliance gaps → 30-day pilot in one facility → rollout across plants. Target multi-site mid-market manufacturers with active EHS leadership.',
     potential: '$45K–$180K ACV per multi-site enterprise',
   },
   {
     id: 'aviation',
     name: 'Aviation & Aerospace MRO',
-    pipeline: 'StandardAero',
+    pipeline: 'Outbound prospecting',
     description:
       'Maintenance, repair, and overhaul environments demanding FAA-aligned task training, technician certifications, and incident-driven retraining. Soteria centralizes credentialing across hangars and lines.',
     contacts: 'Director of Training, QA Managers, Safety Officers',
     strategy:
-      'Demo to StandardAero anchored in tablet-based hangar training. Position iPad app as differentiator vs. legacy LMS vendors. Proposal cycle Q1–Q2 2026.',
+      'Tablet-led demo anchored in hangar-floor training. Position iPad field app as differentiator vs. legacy LMS vendors. Open with regional MRO operators and Tier 2 aerospace suppliers.',
     potential: '$80K–$250K ACV with multi-line expansion',
   },
   {
@@ -121,5 +121,5 @@ export const pricingTiers: PricingTier[] = [
 export const privateMetrics = [
   { value: 6.8, suffix: 'B', prefix: '$', label: 'EHS Training Market (2025)' },
   { value: 47, suffix: '%', prefix: '', label: 'Of companies lack digital compliance training' },
-  { value: 3, suffix: '', prefix: '', label: 'Active enterprise pipeline accounts' },
+  { value: 4, suffix: '', prefix: '', label: 'Priority verticals in active outbound' },
 ];

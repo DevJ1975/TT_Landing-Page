@@ -16,7 +16,7 @@ import { backdrops } from '@/data/backgrounds';
 const founderCreds = [
   { icon: GraduationCap, label: 'MBA' },
   { icon: HardHat, label: 'OSHA 500 / 501 Path' },
-  { icon: Code2, label: 'Full-Stack Developer (Code Platoon 2026)' },
+  { icon: Code2, label: 'Full-Stack Developer' },
   { icon: Star, label: 'Veteran · SDVOSB Certified' },
 ];
 
@@ -40,7 +40,7 @@ const partners = [
 const advantages = [
   'SDVOSB set-aside eligibility',
   'Domain expertise: EHS + instructional design + engineering',
-  'Active enterprise pipeline (3 accounts)',
+  'Active outbound across 4 priority verticals',
   'FedRAMP-aligned from day one',
   'Bootstrapped — lean and capital-efficient',
 ];
