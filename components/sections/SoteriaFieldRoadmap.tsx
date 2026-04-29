@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ChevronDown, Quote, Sparkles, Target } from 'lucide-react';
+import { ChevronDown, Quote, Sparkles, Star, Target } from 'lucide-react';
 import {
   environmentalModules,
   fieldPitch,
@@ -10,9 +10,16 @@ import {
   fieldStrategicGoal,
   priorityBuildOrder,
 } from '@/data/soteria-field-roadmap';
+import {
+  expansionCategories,
+  expansionPriorityCallout,
+  expansionPriorityTable,
+  expansionTimeframe,
+} from '@/data/soteria-field-expansion';
 
 export default function SoteriaFieldRoadmap() {
   const [openId, setOpenId] = useState<string | null>('spill');
+  const [openExpansionId, setOpenExpansionId] = useState<string | null>('inspection');
 
   return (
     <div className="mt-12">
@@ -147,11 +154,188 @@ export default function SoteriaFieldRoadmap() {
         </div>
       </div>
 
-      {/* Priority Build Order */}
+      {/* Operational Expansion Tools — Q3 2026 and beyond */}
+      <div className="mb-10">
+        <div className="flex items-center gap-3 mb-1">
+          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent">
+            Operational Expansion Tools — 6 Categories
+          </p>
+          <span className="h-px flex-1 bg-gradient-to-r from-accent/40 to-transparent" />
+        </div>
+        <p className="text-xs font-mono uppercase tracking-[0.2em] text-slate-500 mb-4">
+          Candidates for {expansionTimeframe}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          {expansionCategories.map((c, i) => {
+            const Icon = c.icon;
+            const isOpen = openExpansionId === c.id;
+            return (
+              <motion.div
+                key={c.id}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.4, delay: (i % 6) * 0.05 }}
+                className={`glass rounded-xl border border-white/5 transition-all ${
+                  isOpen
+                    ? 'border-accent/40 ring-1 ring-accent/20'
+                    : 'hover:border-accent/30'
+                }`}
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenExpansionId(isOpen ? null : c.id)}
+                  className="w-full text-left p-5 flex items-start gap-4"
+                  aria-expanded={isOpen}
+                >
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 border border-accent/30 text-accent flex items-center justify-center">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-display text-lg font-semibold text-white leading-tight">
+                      {c.name}
+                    </h4>
+                    <p className="mt-1 text-[11px] font-mono uppercase tracking-[0.15em] text-slate-500">
+                      {c.tools.length} tools
+                    </p>
+                  </div>
+                  <motion.div
+                    animate={{ rotate: isOpen ? 180 : 0 }}
+                    transition={{ duration: 0.25 }}
+                    className="flex-shrink-0 mt-1 text-accent"
+                  >
+                    <ChevronDown className="h-4 w-4" />
+                  </motion.div>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="tools"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <ul className="px-5 pb-5 pt-1 space-y-2.5 border-t border-white/5">
+                        {c.tools.map((t) => (
+                          <li
+                            key={t.title}
+                            className="flex items-start gap-2.5 pt-2.5 first:pt-3"
+                          >
+                            <span className="mt-2 h-1 w-1 rounded-full bg-accent flex-shrink-0" />
+                            <div>
+                              <p className="text-sm font-medium text-slate-100 leading-snug">
+                                {t.title}
+                              </p>
+                              <p className="text-xs text-slate-400 leading-relaxed mt-0.5">
+                                {t.detail}
+                              </p>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+
+      {/* Expansion Priority Recommendations */}
+      <div className="mb-10">
+        <div className="flex items-center gap-3 mb-4">
+          <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent">
+            Expansion Priority Recommendations
+          </p>
+          <span className="h-px flex-1 bg-gradient-to-r from-accent/40 to-transparent" />
+        </div>
+
+        {/* Callout */}
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-40px' }}
+          transition={{ duration: 0.5 }}
+          className="relative glass rounded-2xl p-6 lg:p-7 mb-5 overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-gradient-to-br from-accent/10 via-transparent to-emerald-500/5 pointer-events-none" />
+          <div className="relative flex items-start gap-4">
+            <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-accent/10 border border-accent/40 text-accent flex items-center justify-center">
+              <Star className="h-5 w-5" strokeWidth={2.5} />
+            </div>
+            <p className="text-slate-200 leading-relaxed">{expansionPriorityCallout}</p>
+          </div>
+        </motion.div>
+
+        {/* Priority table */}
+        <div className="glass rounded-xl overflow-hidden">
+          {/* Header — desktop */}
+          <div className="hidden md:grid grid-cols-12 px-5 py-3 border-b border-white/5 bg-white/[0.03]">
+            <span className="col-span-4 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+              Tool
+            </span>
+            <span className="col-span-4 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+              Regulation Tie-In
+            </span>
+            <span className="col-span-4 font-mono text-[10px] uppercase tracking-[0.2em] text-slate-400">
+              Impact
+            </span>
+          </div>
+          <ul className="divide-y divide-white/5">
+            {expansionPriorityTable.map((row, i) => (
+              <motion.li
+                key={row.tool}
+                initial={{ opacity: 0, x: -10 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: '-30px' }}
+                transition={{ duration: 0.35, delay: i * 0.05 }}
+                className={`grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-4 px-5 py-4 ${
+                  row.flagship ? 'bg-accent/[0.04]' : ''
+                }`}
+              >
+                <div className="md:col-span-4 flex items-center gap-2">
+                  {row.flagship && (
+                    <Star
+                      className="h-3.5 w-3.5 text-accent flex-shrink-0"
+                      strokeWidth={2.5}
+                      fill="currentColor"
+                    />
+                  )}
+                  <span className="font-semibold text-white">{row.tool}</span>
+                </div>
+                <div className="md:col-span-4">
+                  <span className="font-mono text-xs text-accent tracking-[0.05em]">
+                    {row.regulation}
+                  </span>
+                </div>
+                <div className="md:col-span-4">
+                  <span className="text-sm text-slate-300">{row.impact}</span>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
+          <div className="px-5 py-2.5 border-t border-white/5 flex items-center gap-2 bg-white/[0.02]">
+            <Star
+              className="h-3 w-3 text-accent flex-shrink-0"
+              strokeWidth={2.5}
+              fill="currentColor"
+            />
+            <span className="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-400">
+              Flagship — ships first alongside LOTO
+            </span>
+          </div>
+        </div>
+      </div>
+
+      {/* Priority Build Order — Environmental */}
       <div className="mb-10">
         <div className="flex items-center gap-3 mb-4">
           <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-gold">
-            Priority Build Order
+            Environmental Priority Build Order
           </p>
           <span className="h-px flex-1 bg-gradient-to-r from-gold/40 to-transparent" />
         </div>
