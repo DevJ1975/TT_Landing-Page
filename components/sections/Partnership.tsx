@@ -64,7 +64,7 @@ const tabs: {
     headline: 'Pilot Soteria in one facility — see the impact in 30 days.',
     bullets: [
       '30-day onboarding in a single department or facility.',
-      'Migrate priority OSHA / GMP / safety courses; configure RBAC; train administrators.',
+      'Migrate priority OSHA / GMP / safety courses; configure role-based permissions; train administrators.',
       'Before/after compliance metrics measured against your current baseline.',
     ],
   },

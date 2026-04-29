@@ -19,18 +19,18 @@ const body = Outfit({
 export const metadata: Metadata = {
   title: 'Soteria — Workforce Learning OS | Trainovate Technologies',
   description:
-    'Soteria is a FedRAMP-aligned, SCORM/xAPI/cmi5-compliant LMS built by Trainovate Technologies (SDVOSB). Train smarter. Comply faster. Perform better.',
+    'Soteria is a FedRAMP-aligned, compliance-first workforce learning OS built by Trainovate Technologies (SDVOSB). Train smarter. Comply faster. Perform better.',
   keywords: [
     'Soteria',
     'LMS',
     'Trainovate',
     'SDVOSB',
     'FedRAMP',
-    'SCORM',
-    'xAPI',
     'EHS',
     'Compliance Training',
+    'Workforce Learning',
     'GovCon',
+    'OSHA',
   ],
 };
 

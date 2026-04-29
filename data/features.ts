@@ -19,10 +19,10 @@ export type FeaturePillar = {
 export const featurePillars: FeaturePillar[] = [
   {
     id: 'standards',
-    title: 'SCORM / xAPI / cmi5 Compliant',
-    short: 'Industry-standard course interoperability.',
+    title: 'Industry-Standard Training Formats',
+    short: 'Plays every major training package out of the box.',
     detail:
-      'Native SCORM 1.2 / 2004 player, xAPI statement pipeline, and cmi5 launch support. Bring any compliant course package and Soteria plays it — with full progress, score, and audit data captured to a built-in LRS.',
+      'Built to the major industry training standards used across enterprise and federal L&D. Bring any compliant course package and Soteria plays it — capturing progress, score, and audit data into a single compliance record for every learner.',
     icon: Award,
     accent: 'blue',
   },
@@ -31,7 +31,7 @@ export const featurePillars: FeaturePillar[] = [
     title: 'FedRAMP-Aligned Architecture',
     short: 'Built for federal-grade trust from day one.',
     detail:
-      'Zero-trust auth, role-based access, immutable audit logs, encryption at rest and in transit. AWS GovCloud deployment path for FedRAMP Moderate alignment — engineered to satisfy FISMA and NIST 800-53 control families.',
+      'Zero-trust access controls, role-based permissions, immutable audit logs, and encryption at rest and in transit. Deployment path on a federal-cleared cloud for FedRAMP Moderate alignment — engineered to satisfy FISMA and NIST 800-53 control families.',
     icon: ShieldCheck,
     accent: 'gold',
   },
@@ -49,16 +49,16 @@ export const featurePillars: FeaturePillar[] = [
     title: 'Multi-Tenant (Enterprise + Gov)',
     short: 'One platform. Isolated tenancies.',
     detail:
-      'Per-tenant data isolation with shared infrastructure efficiencies. Enterprises run their own brand, content library, and reporting; federal tenants get FedRAMP-boundary isolation. RBAC across organizations, departments, and crews.',
+      'Per-tenant data isolation with shared infrastructure efficiencies. Enterprises run their own brand, content library, and reporting; federal tenants get FedRAMP-boundary isolation. Role-based permissions across organizations, departments, and crews.',
     icon: Building2,
     accent: 'blue',
   },
   {
     id: 'authoring',
     title: 'Course Authoring & Import',
-    short: 'Drag-and-drop authoring or bring your own SCORM.',
+    short: 'Drag-and-drop authoring or bring your own courses.',
     detail:
-      'Web-based authoring for short videos, scenario branching, and quiz banks. Import any SCORM 1.2 / 2004 / cmi5 package, or build native lessons with Soteria’s authoring canvas. Versioning, draft / publish workflow, and per-tenant content libraries.',
+      'Web-based authoring for short videos, scenario branching, and quiz banks. Import any industry-standard course package, or build new lessons inside Soteria’s authoring canvas. Versioning, draft / publish workflow, and per-tenant content libraries.',
     icon: PenLine,
     accent: 'blue',
   },
@@ -73,4 +73,10 @@ export const featurePillars: FeaturePillar[] = [
   },
 ];
 
-export const techStack = ['Next.js', 'Supabase', 'Prisma', 'tRPC', 'AWS'];
+export const techStack = [
+  'Federal-Cleared Cloud',
+  'Mobile-Native iPad App',
+  'Compliance Records Engine',
+  'Encrypted by Default',
+  'Audit-Ready From Day One',
+];

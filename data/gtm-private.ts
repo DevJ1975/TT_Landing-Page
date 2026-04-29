@@ -78,7 +78,7 @@ export const gtmSteps: GTMStep[] = [
     step: 3,
     title: 'Pilot (1 Department, 30-Day Onboarding)',
     detail:
-      'Stand up a single facility or function. Migrate priority courses, set up RBAC, train administrators, and capture before/after compliance metrics.',
+      'Stand up a single facility or function. Migrate priority courses, set up role-based permissions, train administrators, and capture before / after compliance metrics.',
   },
   {
     step: 4,

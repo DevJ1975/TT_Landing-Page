@@ -114,18 +114,18 @@ export const federalGTMSteps: FederalGTMStep[] = [
 
 export const fedRampPillars = [
   {
-    title: 'Supabase on AWS GovCloud Path',
+    title: 'Federal-Cleared Cloud Deployment Path',
     detail:
-      'Postgres + Auth + Storage architected to run inside AWS GovCloud boundary for FedRAMP Moderate alignment.',
+      'Architected from day one to run inside a federal-cleared cloud boundary for FedRAMP Moderate alignment.',
   },
   {
     title: 'Zero-Trust Architecture',
     detail:
-      'Identity-aware access, signed service-to-service calls, and per-tenant cryptographic boundaries.',
+      'Identity-aware access, encrypted communication between services, and per-tenant cryptographic boundaries.',
   },
   {
     title: 'Audit Trail + FISMA-Ready Logging',
     detail:
-      'Immutable, time-stamped audit log of all administrative and learner actions, exportable for IG and ATO review.',
+      'Immutable, time-stamped audit log of all administrative and learner actions, exportable for Inspector General and ATO review.',
   },
 ];

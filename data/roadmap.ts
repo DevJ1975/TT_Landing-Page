@@ -26,7 +26,7 @@ export const roadmap: Quarter[] = [
         id: 'q1-mvp',
         title: 'Soteria MVP: Core LMS Live',
         detail:
-          'Auth, course engine, SCORM 1.2 / 2004 player, learner + admin dashboards. Production deployment on AWS, internal QA complete.',
+          'Login, course engine, industry-standard course player, learner + admin dashboards. Production deployment on a federal-cleared cloud, internal quality testing complete.',
         status: 'complete',
       },
       {
@@ -74,9 +74,9 @@ export const roadmap: Quarter[] = [
     milestones: [
       {
         id: 'q2-v11',
-        title: 'Soteria v1.1: xAPI / LRS Integration',
+        title: 'Soteria v1.1: Advanced Learner Analytics',
         detail:
-          'Native LRS endpoint, xAPI statement pipeline, and basic statement-query API. Enables granular learner-experience analytics.',
+          'Built-in compliance records engine and a granular learner-experience pipeline. Enables drill-down analytics on every interaction across the workforce.',
         status: 'in-progress',
       },
       {
@@ -131,7 +131,7 @@ export const roadmap: Quarter[] = [
       },
       {
         id: 'q3-ipad',
-        title: 'Soteria iPad Field App (SwiftUI) Beta',
+        title: 'Soteria iPad Field App Beta',
         detail:
           'Native iPad app: offline course playback, photo-based competency capture, supervisor sign-off. Beta with active pilot customers.',
         status: 'planned',
@@ -169,7 +169,7 @@ export const roadmap: Quarter[] = [
         id: 'q4-v20',
         title: 'Soteria v2.0: FedRAMP Documentation Started',
         detail:
-          'System Security Plan (SSP), control narratives, and AWS GovCloud deployment design. Preparation for sponsor outreach.',
+          'System Security Plan (SSP), control narratives, and federal-cleared cloud deployment design. Preparation for sponsor outreach.',
         status: 'planned',
       },
       {

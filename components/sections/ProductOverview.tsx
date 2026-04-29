@@ -30,7 +30,7 @@ import SoteriaFieldSIMOPS from './SoteriaFieldSIMOPS';
 import { useState } from 'react';
 
 const lmsBannerChips = [
-  { icon: Award, label: 'SCORM / xAPI / cmi5' },
+  { icon: Award, label: 'Industry-Standard Training Formats' },
   { icon: PenLine, label: 'Course Authoring' },
   { icon: Building2, label: 'Multi-Tenant' },
   { icon: BarChart3, label: 'Analytics & Audit' },
@@ -175,7 +175,7 @@ export default function ProductOverview() {
           surface="Surface 02 · iPad Field App"
           product="Soteria Field"
           tagline="The operational compliance tool — workers permit, learn, and document on the floor."
-          description="The execution surface. Native iPadOS 17+ app with a permit engine (LOTO today, SIMOPS as the flagship O&G build), an environmental compliance suite, inspection and audit tools, and a micro-learning player. Offline-first, xAPI-aligned. Where compliance actually happens."
+          description="The execution surface. Native iPad app with a permit engine (LOTO today, SIMOPS as the flagship O&G build), an environmental compliance suite, inspection and audit tools, and a micro-learning player. Offline-first, audit-ready. Where compliance actually happens."
           chips={fieldBannerChips}
           variant="blue"
         />

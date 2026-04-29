@@ -42,10 +42,10 @@ export default function SoteriaFieldSystem() {
         </h3>
         <p className="mt-5 max-w-3xl text-slate-300 leading-relaxed">
           Soteria Field is a native iPad app delivering mixed-format micro-learning (under five
-          minutes per lesson) to frontline workers. It operates offline-first, syncs completions
-          to the Supabase backend, and pushes xAPI statements to the Soteria LRS. The web admin
-          portal remains intact — Soteria Field is the worker-facing delivery surface, not a
-          replacement for the LMS.
+          minutes per lesson) to frontline workers. It works fully offline, syncs completions
+          back to the secure cloud platform, and writes every action to the compliance record
+          engine. The web admin portal remains intact — Soteria Field is the worker-facing
+          delivery surface, not a replacement for the LMS.
         </p>
       </div>
 
@@ -149,7 +149,7 @@ export default function SoteriaFieldSystem() {
                   iPad App
                 </h4>
                 <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-accent mt-1">
-                  SwiftUI · iPadOS 17+
+                  Native iPad · Offline-First
                 </p>
               </div>
             </div>
@@ -369,7 +369,7 @@ function ArchitectureDiagram() {
             System Architecture
           </span>
           <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500">
-            Two-surface · Offline-first · xAPI-aligned
+            Two-surface · Offline-first · Audit-ready
           </span>
         </div>
 
@@ -379,7 +379,7 @@ function ArchitectureDiagram() {
             viewBox="0 0 1000 480"
             className="w-full h-auto"
             role="img"
-            aria-label="Soteria Field architecture: web admin portal and iPad both connect to Supabase backend and Soteria LRS."
+            aria-label="Soteria Field architecture: web admin portal and iPad both connect to a secure cloud platform and a compliance records engine."
           >
             <defs>
               <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
@@ -450,9 +450,9 @@ function ArchitectureDiagram() {
               </text>
             </g>
 
-            {/* MIDDLE: Backend hub — Supabase + LRS */}
+            {/* MIDDLE: Backend hub — Secure cloud + Compliance records */}
             <g>
-              {/* Supabase */}
+              {/* Secure Cloud Platform */}
               <rect
                 x="120"
                 y="180"
@@ -480,20 +480,20 @@ function ArchitectureDiagram() {
                 y="240"
                 textAnchor="middle"
                 fontFamily="Syne, sans-serif"
-                fontSize="22"
+                fontSize="20"
                 fontWeight="700"
                 fill="#ffffff"
               >
-                Supabase
+                Secure Cloud Platform
               </text>
               <text x="280" y="265" textAnchor="middle" fontSize="11" fill="#94A3B8">
-                Auth · Profiles · Roles
+                Login · Profiles · Roles
               </text>
               <text x="280" y="282" textAnchor="middle" fontSize="11" fill="#94A3B8">
                 Content Library · Assignments
               </text>
 
-              {/* LRS */}
+              {/* Compliance Records Engine */}
               <rect
                 x="560"
                 y="180"
@@ -521,17 +521,17 @@ function ArchitectureDiagram() {
                 y="240"
                 textAnchor="middle"
                 fontFamily="Syne, sans-serif"
-                fontSize="22"
+                fontSize="18"
                 fontWeight="700"
                 fill="#ffffff"
               >
-                Soteria LRS
+                Compliance Records Engine
               </text>
               <text x="720" y="265" textAnchor="middle" fontSize="11" fill="#94A3B8">
-                xAPI Statement Store
+                Audit-Ready Learner Record
               </text>
               <text x="720" y="282" textAnchor="middle" fontSize="11" fill="#94A3B8">
-                Audit Trail · Reporting
+                Inspection Export · Reporting
               </text>
             </g>
 
@@ -577,12 +577,12 @@ function ArchitectureDiagram() {
                 fontSize="11"
                 fill="#94A3B8"
               >
-                iPad · iPadOS 17+ · Offline-first
+                iPad · Offline-First · Field-Ready
               </text>
             </g>
 
             {/* Arrows */}
-            {/* Web Admin → Supabase */}
+            {/* Web Admin → Cloud */}
             <line
               x1="430"
               y1="100"
@@ -603,7 +603,7 @@ function ArchitectureDiagram() {
             >
               author / assign
             </text>
-            {/* Web Admin → LRS */}
+            {/* Web Admin → Compliance Records */}
             <line
               x1="570"
               y1="100"
@@ -625,7 +625,7 @@ function ArchitectureDiagram() {
               report / audit
             </text>
 
-            {/* Supabase ↔ Soteria Field */}
+            {/* Secure Cloud ↔ Soteria Field */}
             <line
               x1="320"
               y1="300"
@@ -648,7 +648,7 @@ function ArchitectureDiagram() {
               sync · assignments
             </text>
 
-            {/* Soteria Field → LRS */}
+            {/* Soteria Field → Compliance Records */}
             <line
               x1="570"
               y1="380"
@@ -667,7 +667,7 @@ function ArchitectureDiagram() {
               fontFamily="ui-monospace, SFMono-Regular, monospace"
               letterSpacing="1"
             >
-              xAPI statements
+              completion records
             </text>
           </svg>
         </div>
@@ -681,7 +681,7 @@ function ArchitectureDiagram() {
             <WifiOff className="h-3 w-3 text-emerald-400" /> Offline-first execution
           </span>
           <span className="flex items-center gap-2">
-            <Database className="h-3 w-3 text-gold" /> xAPI / LRS audit trail
+            <Database className="h-3 w-3 text-gold" /> Compliance audit trail
           </span>
         </div>
       </div>

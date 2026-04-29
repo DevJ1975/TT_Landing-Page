@@ -58,7 +58,7 @@ export const learningFormats: LearningFormat[] = [
     icon: Video,
     duration: '2–4 min',
     description:
-      'AVFoundation player with chapters, captions, and playback-speed control. Fully offline-cached. Auto-pauses if the app is backgrounded.',
+      'High-quality video player with chapters, captions, and playback-speed control. Fully offline. Auto-pauses if the worker switches apps so credit only counts when they are actually watching.',
   },
   {
     id: 'scenario',
@@ -67,7 +67,7 @@ export const learningFormats: LearningFormat[] = [
     icon: GitBranch,
     duration: '3–5 min',
     description:
-      'Branching decision cards built natively in SwiftUI with SwiftData state. No SCORM required. “What do you do next?” style interactions designed for field conditions.',
+      'Branching decision cards built native to the iPad. “What do you do next?” style interactions designed for field conditions — no slow web pages, no clunky course wrappers.',
   },
   {
     id: 'quiz',
@@ -76,7 +76,7 @@ export const learningFormats: LearningFormat[] = [
     icon: CheckSquare,
     duration: '< 2 min',
     description:
-      '3–5 questions (multiple choice, true/false, image-based). Immediate feedback. Pass/fail triggers an xAPI completion statement to the LRS.',
+      '3–5 questions (multiple choice, true/false, image-based). Immediate feedback. Pass / fail flows directly into the worker’s compliance record.',
   },
 ];
 
@@ -87,44 +87,44 @@ export type TechItem = {
 
 export const ipadStack: TechItem[] = [
   {
-    title: 'SwiftUI + iPadOS 17+',
-    detail: 'Native UI built for the iPad form factor and field ergonomics.',
+    title: 'Native iPad Experience',
+    detail: 'Built specifically for the iPad form factor and field ergonomics — not a website squeezed onto a tablet.',
   },
   {
-    title: 'SwiftData',
-    detail: 'Offline-first local persistence for assignments, progress, and queued statements.',
+    title: 'Offline-First by Design',
+    detail: 'Lessons, permits, and progress all stored locally. Works in hangars, plants, basements, and offshore — anywhere with no signal.',
   },
   {
-    title: 'CoreLocation + QR scanner',
-    detail: 'Context-aware lesson triggers tied to equipment and zones.',
+    title: 'Location & QR Awareness',
+    detail: 'The right lesson surfaces automatically when a worker scans equipment or enters a designated work zone.',
   },
   {
-    title: 'AVFoundation',
-    detail: 'Hardware-accelerated video playback with chapter and caption support.',
+    title: 'High-Quality Video Playback',
+    detail: 'Hardware-accelerated video with chapters and captions, optimized for noisy industrial environments.',
   },
   {
-    title: 'APNs',
-    detail: 'Push notifications when supervisors assign or escalate a lesson.',
+    title: 'Push Notifications',
+    detail: 'Supervisors send a lesson directly to a worker’s iPad before a high-risk task — they see it right away.',
   },
   {
-    title: 'BackgroundTasks',
-    detail: 'Local xAPI statement queue flushes to the LRS when connectivity returns.',
+    title: 'Automatic Background Sync',
+    detail: 'Completions, signatures, and photos sync the moment connectivity returns — no worker action required.',
   },
   {
-    title: 'Sign in with Apple',
-    detail: 'Privacy-respecting worker auth that maps to Soteria identities.',
+    title: 'Privacy-First Secure Login',
+    detail: 'Frictionless, passwordless worker login backed by Apple’s privacy guarantees.',
   },
 ];
 
 export const backendStack: TechItem[] = [
   {
-    title: 'Supabase',
+    title: 'Secure Cloud Platform',
     detail:
-      'User profiles, role assignments, micro-lesson content library, supervisor assignment engine.',
+      'User profiles, role assignments, course library, and supervisor assignment engine — running on a federal-cleared cloud.',
   },
   {
-    title: 'Soteria LRS',
-    detail: 'xAPI statement store and compliance reporting for every learner action.',
+    title: 'Compliance Records Engine',
+    detail: 'A single, immutable record of every learner action — ready for any auditor in any timezone.',
   },
   {
     title: 'Web Admin Portal',
@@ -146,12 +146,12 @@ export const buildPhases: BuildPhase[] = [
     label: 'Phase 1',
     title: 'MVP — Field-Ready Core',
     features: [
-      'Worker auth via Sign in with Apple',
+      'Privacy-first secure worker login',
       'Assigned micro-lesson queue',
       'Video + scenario + quiz player',
       'Offline download and sync',
-      'xAPI completion statements to Soteria LRS',
-      'Push notification on assignment',
+      'Completions written to the compliance record',
+      'Push notifications on supervisor assignment',
     ],
   },
   {
@@ -160,7 +160,7 @@ export const buildPhases: BuildPhase[] = [
     title: 'Smart Triggers',
     features: [
       'QR-code scan → lesson launch',
-      'Geofence trigger via CoreLocation',
+      'Location-aware lesson triggers',
       'Self-browse content library by role',
       'Completion badges and streaks',
       'Supervisor mobile view',
@@ -201,18 +201,26 @@ export const fieldStrategicQuote =
 
 export const ipadRationale: string[] = [
   'Manufacturing, aviation MRO, and distribution clients standardize on managed iPad fleets.',
-  'MDM deployment via Jamf — the enterprise and federal standard.',
+  'iPad fleets are governed by the same enterprise and federal device-management standards already approved for sensitive work.',
   'Federal and DoD environments issue iPhones and iPads as standard devices.',
-  'Native frameworks (AVFoundation, CoreLocation, BackgroundTasks) have no Android equivalent that matches in reliability.',
+  'Apple’s built-in capabilities for video, location, and background sync run more reliably than the alternatives — fewer support calls, fewer missed completions.',
 ];
 
 export const twoSurfaceNote =
-  'Soteria Field is a named surface within the Soteria product suite — not a standalone product. It shares the Supabase backend, user auth, and LRS with the Soteria LMS web platform. Admins author and manage content on the web. Workers learn in the field on iPad. This two-surface model mirrors how enterprise software is sold: Workday, ServiceNow, and every serious B2B platform separates the configuration surface (web) from the execution surface (mobile / field).';
+  'Soteria Field is a named surface within the Soteria product suite — not a standalone product. It shares the same secure cloud platform, login, and compliance record with the Soteria LMS web platform. Admins author and manage content on the web. Workers learn and permit in the field on iPad. This two-surface model mirrors how enterprise software is sold: Workday, ServiceNow, and every serious B2B platform separate the configuration surface (web) from the execution surface (mobile / field).';
 
 /** Architecture diagram nodes — used to render the inline SVG in the component. */
 export const diagramNodes = {
   webAdmin: { icon: Database, label: 'Web Admin Portal', sub: 'Configuration surface' },
-  supabase: { icon: Database, label: 'Supabase Backend', sub: 'Auth · Content · Assignments' },
-  lrs: { icon: Database, label: 'Soteria LRS', sub: 'xAPI statement store' },
-  ipad: { icon: Tablet, label: 'Soteria Field', sub: 'iPad · iPadOS 17+' },
+  supabase: {
+    icon: Database,
+    label: 'Secure Cloud Platform',
+    sub: 'Login · Content · Assignments',
+  },
+  lrs: {
+    icon: Database,
+    label: 'Compliance Records Engine',
+    sub: 'Audit-ready learner record',
+  },
+  ipad: { icon: Tablet, label: 'Soteria Field', sub: 'iPad · Offline-First' },
 };

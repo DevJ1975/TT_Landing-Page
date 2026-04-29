@@ -62,7 +62,7 @@ type FeatureChip = {
 };
 
 const lmsFeatures: FeatureChip[] = [
-  { icon: Award, label: 'SCORM / xAPI / cmi5' },
+  { icon: Award, label: 'Industry-Standard Training Formats' },
   { icon: Building2, label: 'Multi-Tenant (Enterprise + Gov)' },
   { icon: BarChart3, label: 'Analytics & Audit Dashboard' },
   { icon: HardHat, label: 'EHS / OSHA Curriculum Engine' },
@@ -80,17 +80,17 @@ const fieldFeatures: FeatureChip[] = [
 const backboneItems = [
   {
     icon: Database,
-    title: 'Supabase',
-    detail: 'Auth · Profiles · Roles · Content Library · Assignments',
+    title: 'Secure Cloud Platform',
+    detail: 'Login · Profiles · Roles · Content Library · Assignments',
   },
   {
     icon: Server,
-    title: 'Soteria LRS',
-    detail: 'xAPI statement store · Audit trail · Compliance reporting',
+    title: 'Compliance Records Engine',
+    detail: 'Audit-ready learner record · Immutable trail · One-tap export',
   },
   {
     icon: Cloud,
-    title: 'AWS GovCloud Path',
+    title: 'Federal-Cleared Cloud Path',
     detail: 'FedRAMP Moderate-aligned deployment for federal tenants',
   },
   {
