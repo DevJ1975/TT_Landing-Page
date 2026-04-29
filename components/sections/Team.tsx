@@ -12,6 +12,8 @@ import {
 } from 'lucide-react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import { backdrops } from '@/data/backgrounds';
+import { industryPhotos } from '@/data/industry-photos';
+import IndustrialPhoto from '@/components/ui/IndustrialPhoto';
 
 const founderCreds = [
   { icon: GraduationCap, label: 'MBA' },
@@ -139,6 +141,30 @@ export default function Team() {
             </motion.div>
           );
         })}
+      </div>
+
+      {/* Who we build for — color photo strip */}
+      <div className="mt-10">
+        <h3 className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-5">
+          Who We Build For
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <IndustrialPhoto
+            photo={industryPhotos.workforce}
+            aspect="aspect-[16/10]"
+            delay={0}
+          />
+          <IndustrialPhoto
+            photo={industryPhotos.ipadField}
+            aspect="aspect-[16/10]"
+            delay={0.07}
+          />
+          <IndustrialPhoto
+            photo={industryPhotos.warehouseTablet}
+            aspect="aspect-[16/10]"
+            delay={0.14}
+          />
+        </div>
       </div>
 
       {/* Unfair advantages */}

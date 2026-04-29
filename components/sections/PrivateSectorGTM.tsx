@@ -12,6 +12,8 @@ import {
   privateMetrics,
 } from '@/data/gtm-private';
 import { backdrops } from '@/data/backgrounds';
+import { industryPhotos } from '@/data/industry-photos';
+import IndustrialPhoto from '@/components/ui/IndustrialPhoto';
 
 const verticalIcons: Record<string, typeof Building2> = {
   manufacturing: Building2,
@@ -35,6 +37,19 @@ export default function PrivateSectorGTM() {
       description="Soteria enters the enterprise via the relationship Trainovate already owns: safety consulting and OSHA training. Every consulting engagement is also a Soteria discovery call."
       backdrop={backdrops.privateGtm}
     >
+      {/* Industry visual strip */}
+      <div className="mb-12">
+        <h3 className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-5">
+          Industries We Serve
+        </h3>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
+          <IndustrialPhoto photo={industryPhotos.manufacturing} aspect="aspect-[4/5]" delay={0} />
+          <IndustrialPhoto photo={industryPhotos.aviation} aspect="aspect-[4/5]" delay={0.06} />
+          <IndustrialPhoto photo={industryPhotos.logistics} aspect="aspect-[4/5]" delay={0.12} />
+          <IndustrialPhoto photo={industryPhotos.construction} aspect="aspect-[4/5]" delay={0.18} />
+        </div>
+      </div>
+
       {/* Verticals */}
       <div className="mb-16">
         <h3 className="font-mono text-xs uppercase tracking-[0.25em] text-accent mb-5">

@@ -11,6 +11,8 @@ import {
   fedRampPillars,
 } from '@/data/gtm-federal';
 import { backdrops } from '@/data/backgrounds';
+import { industryPhotos } from '@/data/industry-photos';
+import IndustrialPhoto from '@/components/ui/IndustrialPhoto';
 
 const statusStyle: Record<string, string> = {
   Active: 'bg-emerald-500/10 border-emerald-500/40 text-emerald-300',
@@ -95,6 +97,18 @@ export default function FederalGTM() {
               </p>
             </motion.div>
           </div>
+        </div>
+      </div>
+
+      {/* Federal context visual strip */}
+      <div className="mb-14">
+        <h3 className="font-mono text-xs uppercase tracking-[0.25em] text-gold mb-5">
+          Federal Context
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          <IndustrialPhoto photo={industryPhotos.va} aspect="aspect-[16/10]" delay={0} />
+          <IndustrialPhoto photo={industryPhotos.dod} aspect="aspect-[16/10]" delay={0.07} />
+          <IndustrialPhoto photo={industryPhotos.capitol} aspect="aspect-[16/10]" delay={0.14} />
         </div>
       </div>
 

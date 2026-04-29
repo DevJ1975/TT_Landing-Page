@@ -25,6 +25,8 @@ import {
   simopsTargetClients,
   simopsWorkflow,
 } from '@/data/soteria-field-simops';
+import { industryPhotos } from '@/data/industry-photos';
+import IndustrialPhoto from '@/components/ui/IndustrialPhoto';
 
 const stateLegend: Record<
   ConflictState,
@@ -171,6 +173,27 @@ export default function SoteriaFieldSIMOPS() {
             ))}
           </div>
         </motion.div>
+      </div>
+
+      {/* Where SIMOPS lives — color photo strip */}
+      <div className="mb-12">
+        <h3 className="font-mono text-xs uppercase tracking-[0.25em] text-rose-300 mb-5">
+          Where SIMOPS Lives — Real-World Operating Environments
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <IndustrialPhoto
+            photo={industryPhotos.offshore}
+            aspect="aspect-[16/9]"
+            tint="rose"
+            delay={0}
+          />
+          <IndustrialPhoto
+            photo={industryPhotos.refinery}
+            aspect="aspect-[16/9]"
+            tint="rose"
+            delay={0.08}
+          />
+        </div>
       </div>
 
       {/* Incompatibility Matrix — the heart of the module */}
