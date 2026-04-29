@@ -24,6 +24,7 @@ import {
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import ProductBanner from '@/components/ui/ProductBanner';
 import SectionSubNav, { type SubNavItem } from '@/components/ui/SectionSubNav';
+import VimeoEmbed from '@/components/ui/VimeoEmbed';
 import { featurePillars, techStack } from '@/data/features';
 import { backdrops } from '@/data/backgrounds';
 import SoteriaFieldRoadmap from './SoteriaFieldRoadmap';
@@ -207,6 +208,17 @@ export default function ProductOverview() {
             </motion.div>
           );
         })}
+      </div>
+
+      {/* LMS walkthrough video — caps the LMS sub-section before the AI showcase */}
+      <div className="mt-12">
+        <VimeoEmbed
+          videoId="1166250257"
+          hash="5718878337"
+          title="Soteria LMS Walkthrough"
+          eyebrow="See the LMS in action"
+          caption="A short walkthrough of the Soteria LMS configuration surface — authoring, assignments, and the analytics + audit dashboard."
+        />
       </div>
 
       {/* ─────────── CROSS-CUTTING — SOTERIA AI ─────────── */}
