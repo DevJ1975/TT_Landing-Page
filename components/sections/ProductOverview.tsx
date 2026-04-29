@@ -7,6 +7,7 @@ import { featurePillars, techStack } from '@/data/features';
 import { backdrops } from '@/data/backgrounds';
 import SoteriaFieldRoadmap from './SoteriaFieldRoadmap';
 import SoteriaFieldSystem from './SoteriaFieldSystem';
+import SoteriaFieldSIMOPS from './SoteriaFieldSIMOPS';
 import { useState } from 'react';
 
 const fieldCapabilities = [
@@ -216,6 +217,9 @@ export default function ProductOverview() {
           </div>
         </div>
       </motion.div>
+
+      {/* Soteria Field — SIMOPS Permit Module (flagship O&G differentiator) */}
+      <SoteriaFieldSIMOPS />
 
       {/* Soteria Field — Learning System architecture (triggers, formats, stack, phases) */}
       <SoteriaFieldSystem />
