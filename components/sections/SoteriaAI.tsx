@@ -15,6 +15,7 @@ import {
   fieldAIFeatures,
   lmsAIFeatures,
 } from '@/data/soteria-ai';
+import AIPromptDemo from './AIPromptDemo';
 
 export default function SoteriaAI() {
   return (
@@ -41,6 +42,9 @@ export default function SoteriaAI() {
           {aiHeadline.description}
         </p>
       </div>
+
+      {/* Live demo of the LMS Compliance Copilot — three example prompts */}
+      <AIPromptDemo />
 
       {/* Two-surface AI showcase */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 mb-5 relative">

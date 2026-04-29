@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import ProductBanner from '@/components/ui/ProductBanner';
+import SectionSubNav, { type SubNavItem } from '@/components/ui/SectionSubNav';
 import { featurePillars, techStack } from '@/data/features';
 import { backdrops } from '@/data/backgrounds';
 import SoteriaFieldRoadmap from './SoteriaFieldRoadmap';
@@ -30,6 +31,15 @@ import SoteriaFieldSystem from './SoteriaFieldSystem';
 import SoteriaFieldSIMOPS from './SoteriaFieldSIMOPS';
 import SoteriaAI from './SoteriaAI';
 import { useState } from 'react';
+
+const productSubNavItems: SubNavItem[] = [
+  { id: 'product-lms', label: 'LMS', surface: 'lms' },
+  { id: 'product-ai', label: 'AI', surface: 'ai' },
+  { id: 'product-field-loto', label: 'Field · LOTO', surface: 'field' },
+  { id: 'product-field-system', label: 'Field · How It Works', surface: 'field' },
+  { id: 'product-field-roadmap', label: 'Field · Roadmap', surface: 'field' },
+  { id: 'product-field-simops', label: 'Field · SIMOPS', surface: 'field' },
+];
 
 const lmsBannerChips = [
   { icon: Sparkles, label: 'AI Authoring · Copilot · Audit' },
@@ -93,16 +103,21 @@ export default function ProductOverview() {
       description="Soteria is two distinct products that share one backbone — and one AI brain. Soteria LMS is the web platform admins author, configure, and report from. Soteria Field is the iPad app workers permit, learn, and document on. AI is woven through both surfaces, auditable and operator-controlled. Same compliance posture, two surfaces."
       backdrop={backdrops.product}
     >
+      {/* Sticky sub-nav — only renders while the visitor is inside this section */}
+      <SectionSubNav parentId="product" items={productSubNavItems} />
+
       {/* ─────────── PRODUCT 01 — SOTERIA LMS ─────────── */}
-      <ProductBanner
-        number="01"
-        surface="Surface 01 · Web Platform"
-        product="Soteria LMS"
-        tagline="The compliance LMS — admins author, configure, and report."
-        description="The configuration surface. Web-based course authoring, multi-tenant administration, role-based access, certification tracking, and the analytics + audit dashboard. Where compliance programs are designed and inspected."
-        chips={lmsBannerChips}
-        variant="blue"
-      />
+      <div id="product-lms" style={{ scrollMarginTop: '5rem' }}>
+        <ProductBanner
+          number="01"
+          surface="Surface 01 · Web Platform"
+          product="Soteria LMS"
+          tagline="The compliance LMS — admins author, configure, and report."
+          description="The configuration surface. Web-based course authoring, multi-tenant administration, role-based access, certification tracking, and the analytics + audit dashboard. Where compliance programs are designed and inspected."
+          chips={lmsBannerChips}
+          variant="blue"
+        />
+      </div>
 
       <div className="mt-8 mb-6">
         <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent">
@@ -173,10 +188,12 @@ export default function ProductOverview() {
       </div>
 
       {/* ─────────── CROSS-CUTTING — SOTERIA AI ─────────── */}
-      <SoteriaAI />
+      <div id="product-ai" style={{ scrollMarginTop: '5rem' }}>
+        <SoteriaAI />
+      </div>
 
       {/* ─────────── PRODUCT 02 — SOTERIA FIELD ─────────── */}
-      <div className="mt-20">
+      <div id="product-field-loto" style={{ scrollMarginTop: '5rem' }} className="mt-20">
         <ProductBanner
           number="02"
           surface="Surface 02 · iPad Field App"
@@ -296,13 +313,19 @@ export default function ProductOverview() {
       </motion.div>
 
       {/* Soteria Field — Learning System architecture (triggers, formats, stack, phases) */}
-      <SoteriaFieldSystem />
+      <div id="product-field-system" style={{ scrollMarginTop: '5rem' }}>
+        <SoteriaFieldSystem />
+      </div>
 
       {/* Soteria Field — Coming Soon: Environmental modules roadmap */}
-      <SoteriaFieldRoadmap />
+      <div id="product-field-roadmap" style={{ scrollMarginTop: '5rem' }}>
+        <SoteriaFieldRoadmap />
+      </div>
 
       {/* Soteria Field — SIMOPS Permit Module (flagship O&G differentiator, climax block) */}
-      <SoteriaFieldSIMOPS />
+      <div id="product-field-simops" style={{ scrollMarginTop: '5rem' }}>
+        <SoteriaFieldSIMOPS />
+      </div>
 
       {/* Tech stack badges */}
       <motion.div

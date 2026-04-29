@@ -14,6 +14,7 @@ import {
 import { backdrops } from '@/data/backgrounds';
 import { industryPhotos } from '@/data/industry-photos';
 import IndustrialPhoto from '@/components/ui/IndustrialPhoto';
+import ROICalculator from './ROICalculator';
 
 const verticalIcons: Record<string, typeof Building2> = {
   manufacturing: Building2,
@@ -190,6 +191,11 @@ export default function PrivateSectorGTM() {
             </motion.div>
           ))}
         </div>
+      </div>
+
+      {/* ROI Calculator — converts the abstract market sizing above into the visitor's own numbers */}
+      <div className="mt-12">
+        <ROICalculator />
       </div>
     </SectionWrapper>
   );
