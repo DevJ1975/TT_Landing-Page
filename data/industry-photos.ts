@@ -40,20 +40,21 @@ export const industryPhotos: Record<string, IndustryPhoto> = {
     label: 'Construction & Industrial Services',
     caption: 'Crew briefings · digital toolbox-talk delivery',
   },
-  // Gulf of Mexico production rig
-  // Swap target: search "gulf of mexico oil rig" / "offshore production platform"
-  // on unsplash.com and paste the resulting CDN URL if this one doesn't load.
+  // Gulf of Mexico production rig.
+  // Local path: drop a JPG/WebP at /public/industry/offshore-rig.jpg.
+  // If the file is missing the IndustrialPhoto component will show a
+  // labeled placeholder with the icon + caption instead of a broken image.
   offshore: {
     id: 'offshore',
-    src: 'https://images.unsplash.com/photo-1610028290816-5d937a395a49?auto=format&fit=crop&w=1600&q=75',
+    src: '/industry/offshore-rig.jpg',
     label: 'Gulf of Mexico Production Rig',
     caption: 'Offshore production platform · where SIMOPS coordination is life-critical',
   },
-  // Onshore land drilling rig (renamed from "refinery")
-  // Swap target: search "land drilling rig" / "oil derrick" on unsplash.com.
+  // Onshore land drilling rig (oil derrick).
+  // Local path: drop a JPG/WebP at /public/industry/land-rig.jpg.
   refinery: {
     id: 'refinery',
-    src: 'https://images.unsplash.com/photo-1582640464717-e9ce8da66ee4?auto=format&fit=crop&w=1600&q=75',
+    src: '/industry/land-rig.jpg',
     label: 'Onshore Land Drilling Rig',
     caption: 'Permian / Bakken-style drilling operations · PSM-regulated work',
   },
