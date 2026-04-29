@@ -24,13 +24,13 @@ export const industryPhotos: Record<string, IndustryPhoto> = {
   },
   aviation: {
     id: 'aviation',
-    src: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?auto=format&fit=crop&w=1200&q=70',
+    src: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1200&q=70',
     label: 'Aviation & Aerospace MRO',
     caption: 'Hangar-floor training · technician credentialing',
   },
   logistics: {
     id: 'logistics',
-    src: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=1200&q=70',
+    src: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=70',
     label: 'Logistics & Distribution',
     caption: 'DC and 3PL operations · forklift recertification',
   },
@@ -60,7 +60,7 @@ export const industryPhotos: Record<string, IndustryPhoto> = {
   },
   capitol: {
     id: 'capitol',
-    src: 'https://images.unsplash.com/photo-1602940659805-770d1b3b9911?auto=format&fit=crop&w=1200&q=70',
+    src: 'https://images.unsplash.com/photo-1569236815775-9b43f2d7e8e4?auto=format&fit=crop&w=1200&q=70',
     label: 'Federal Civilian Agencies',
     caption: 'GSA · DOL · DHS components',
   },
@@ -72,7 +72,7 @@ export const industryPhotos: Record<string, IndustryPhoto> = {
   },
   dod: {
     id: 'dod',
-    src: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=1200&q=70',
+    src: 'https://images.unsplash.com/photo-1549477648-06f04c84ff40?auto=format&fit=crop&w=1200&q=70',
     label: 'Department of Defense',
     caption: 'Installation safety · MOS-aligned curriculum',
   },
@@ -84,13 +84,13 @@ export const industryPhotos: Record<string, IndustryPhoto> = {
   },
   warehouseTablet: {
     id: 'warehouseTablet',
-    src: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=1200&q=70',
+    src: 'https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1200&q=70',
     label: 'Operations',
     caption: 'Tablet-led floor inspections',
   },
   workforce: {
     id: 'workforce',
-    src: 'https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1200&q=70',
+    src: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1200&q=70',
     label: 'Industrial Workforce',
     caption: 'The people we build for',
   },
