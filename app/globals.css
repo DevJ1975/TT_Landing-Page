@@ -19,6 +19,11 @@
 
 html {
   scroll-behavior: smooth;
+  /* Account for the fixed top fixtures (mobile bar, section sub-nav) when
+     anything triggers scroll-into-view — including iframe focus on click.
+     Without this, focusing the embedded video shifts the page upward to put
+     the iframe top behind the sub-nav and the page appears to "jump." */
+  scroll-padding-top: 5rem;
 }
 
 html,

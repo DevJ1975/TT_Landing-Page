@@ -30,16 +30,14 @@ export default function VimeoEmbed({
   caption,
   aspect = 'aspect-video',
 }: Props) {
-  const params = new URLSearchParams({
-    title: '0',
-    byline: '0',
-    portrait: '0',
-    dnt: '1',
-    color: '38BDF8',
-    transparent: '1',
-  });
-  if (hash) params.set('h', hash);
-  const src = `https://player.vimeo.com/video/${encodeURIComponent(videoId)}?${params.toString()}`;
+  // Keep the URL minimal so the privacy hash always works. The hash is
+  // sensitive — additional player-customization params can break playback
+  // on videos that haven't enabled custom branding in Vimeo's settings.
+  // We add `dnt=1` only (privacy: do-not-track), which is always allowed.
+  const queryParts: string[] = [];
+  if (hash) queryParts.push(`h=${encodeURIComponent(hash)}`);
+  queryParts.push('dnt=1');
+  const src = `https://player.vimeo.com/video/${encodeURIComponent(videoId)}?${queryParts.join('&')}`;
 
   return (
     <motion.figure
