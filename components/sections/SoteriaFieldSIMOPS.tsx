@@ -367,7 +367,23 @@ function ConflictMatrixVisual() {
         </span>
       </div>
 
-      <div className="glass rounded-2xl p-5 lg:p-7 overflow-x-auto">
+      <div className="relative glass rounded-2xl p-5 lg:p-7 overflow-x-auto overflow-y-hidden">
+        {/* Looping scan beam — reinforces "the system is continuously checking" */}
+        <motion.div
+          aria-hidden="true"
+          className="absolute inset-x-0 h-12 pointer-events-none"
+          style={{
+            background:
+              'linear-gradient(to bottom, transparent, rgba(56,189,248,0.18) 50%, transparent)',
+          }}
+          animate={{ y: ['-20%', '110%'] }}
+          transition={{
+            duration: 4.2,
+            repeat: Infinity,
+            ease: 'linear',
+            repeatDelay: 1.6,
+          }}
+        />
         <div className="min-w-[640px]">
           {/* Column header */}
           <div

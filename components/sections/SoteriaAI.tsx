@@ -57,13 +57,36 @@ export default function SoteriaAI() {
           features={lmsAIFeatures}
         />
 
-        {/* Connector arrow (desktop only) */}
+        {/* Connector arrow (desktop only) — pulses to suggest the AI brain
+            is alive between the two surfaces */}
         <div
           aria-hidden="true"
           className="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
         >
-          <div className="flex items-center justify-center w-12 h-12 rounded-full bg-navy-700 border border-accent/40 shadow-[0_0_20px_rgba(56,189,248,0.4)]">
-            <ArrowLeftRight className="h-5 w-5 text-accent" />
+          <div className="relative flex items-center justify-center">
+            {/* Two outgoing ping rings */}
+            {[0, 1.4].map((delay, i) => (
+              <motion.span
+                key={i}
+                className="absolute inline-flex h-12 w-12 rounded-full border border-accent/60"
+                animate={{ scale: [1, 1.7], opacity: [0.55, 0] }}
+                transition={{
+                  duration: 2.6,
+                  repeat: Infinity,
+                  delay,
+                  ease: 'easeOut',
+                }}
+              />
+            ))}
+            <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-navy-700 border border-accent/40 shadow-[0_0_20px_rgba(56,189,248,0.4)]">
+              <motion.span
+                animate={{ rotate: [0, 0, 180, 180, 360] }}
+                transition={{ duration: 3.4, repeat: Infinity, ease: 'easeInOut' }}
+                className="flex"
+              >
+                <ArrowLeftRight className="h-5 w-5 text-accent" />
+              </motion.span>
+            </div>
           </div>
         </div>
 

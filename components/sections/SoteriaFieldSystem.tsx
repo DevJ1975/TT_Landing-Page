@@ -592,6 +592,25 @@ function ArchitectureDiagram() {
               strokeWidth="2"
               markerEnd="url(#arrow)"
             />
+            {/* Flowing data — Web Admin → Cloud */}
+            <line
+              x1="430"
+              y1="100"
+              x2="280"
+              y2="180"
+              stroke="#38BDF8"
+              strokeWidth="2"
+              strokeOpacity="0.85"
+              strokeDasharray="3 14"
+              strokeLinecap="round"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                values="0;-34"
+                dur="1.6s"
+                repeatCount="indefinite"
+              />
+            </line>
             <text
               x="332"
               y="146"
@@ -613,6 +632,25 @@ function ArchitectureDiagram() {
               strokeWidth="2"
               markerEnd="url(#arrow)"
             />
+            {/* Flowing data — Web Admin → Compliance Records */}
+            <line
+              x1="570"
+              y1="100"
+              x2="720"
+              y2="180"
+              stroke="#F5B544"
+              strokeWidth="2"
+              strokeOpacity="0.8"
+              strokeDasharray="3 14"
+              strokeLinecap="round"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                values="0;-34"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </line>
             <text
               x="668"
               y="146"
@@ -636,6 +674,44 @@ function ArchitectureDiagram() {
               markerEnd="url(#arrow)"
               markerStart="url(#arrow)"
             />
+            {/* Flowing data — Cloud → Field (down) */}
+            <line
+              x1="320"
+              y1="300"
+              x2="430"
+              y2="380"
+              stroke="#38BDF8"
+              strokeWidth="2"
+              strokeOpacity="0.85"
+              strokeDasharray="3 14"
+              strokeLinecap="round"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                values="0;-34"
+                dur="1.8s"
+                repeatCount="indefinite"
+              />
+            </line>
+            {/* Flowing data — Field → Cloud (up) */}
+            <line
+              x1="320"
+              y1="300"
+              x2="430"
+              y2="380"
+              stroke="#60A5FA"
+              strokeWidth="2"
+              strokeOpacity="0.55"
+              strokeDasharray="2 18"
+              strokeLinecap="round"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                values="0;40"
+                dur="2.4s"
+                repeatCount="indefinite"
+              />
+            </line>
             <text
               x="358"
               y="345"
@@ -658,6 +734,25 @@ function ArchitectureDiagram() {
               strokeWidth="2"
               markerEnd="url(#arrow)"
             />
+            {/* Flowing data — Field → Compliance Records */}
+            <line
+              x1="570"
+              y1="380"
+              x2="720"
+              y2="300"
+              stroke="#F5B544"
+              strokeWidth="2"
+              strokeOpacity="0.85"
+              strokeDasharray="3 14"
+              strokeLinecap="round"
+            >
+              <animate
+                attributeName="stroke-dashoffset"
+                values="0;-34"
+                dur="1.4s"
+                repeatCount="indefinite"
+              />
+            </line>
             <text
               x="668"
               y="345"

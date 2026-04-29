@@ -1,5 +1,6 @@
 'use client';
 
+import { motion } from 'framer-motion';
 import type { MilestoneStatus } from '@/data/roadmap';
 import { Circle, Loader2, CheckCircle2 } from 'lucide-react';
 
@@ -41,19 +42,31 @@ export default function StatusBadge({
   const padding = size === 'sm' ? 'px-2 py-0.5 text-[10px]' : 'px-2.5 py-1 text-[11px]';
 
   const Base = onClick ? 'button' : 'span';
+  const inProgress = status === 'in-progress';
 
   return (
-    <Base
-      onClick={onClick}
-      className={`inline-flex items-center gap-1.5 ${padding} rounded-full border font-mono uppercase tracking-[0.16em] ${c.bg} ${c.text} ${
-        onClick ? 'cursor-pointer hover:brightness-125 transition' : ''
-      }`}
-    >
-      <Icon
-        className={`h-3 w-3 ${status === 'in-progress' ? 'animate-spin' : ''}`}
-        strokeWidth={2.5}
-      />
-      {c.label}
-    </Base>
+    <span className="relative inline-flex">
+      {/* Looping breathing aura — only for in-progress badges */}
+      {inProgress && (
+        <motion.span
+          aria-hidden="true"
+          className="absolute inset-0 rounded-full bg-accent/30 blur-md pointer-events-none"
+          animate={{ opacity: [0.25, 0.6, 0.25], scale: [0.95, 1.08, 0.95] }}
+          transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      )}
+      <Base
+        onClick={onClick}
+        className={`relative inline-flex items-center gap-1.5 ${padding} rounded-full border font-mono uppercase tracking-[0.16em] ${c.bg} ${c.text} ${
+          onClick ? 'cursor-pointer hover:brightness-125 transition' : ''
+        }`}
+      >
+        <Icon
+          className={`h-3 w-3 ${inProgress ? 'animate-spin' : ''}`}
+          strokeWidth={2.5}
+        />
+        {c.label}
+      </Base>
+    </span>
   );
 }

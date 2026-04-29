@@ -23,6 +23,23 @@ export default function Hero() {
       <div className="absolute inset-0 grid-bg [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
       <div className="absolute inset-0 grid-bg-fine opacity-50 [mask-image:radial-gradient(ellipse_at_center,black_15%,transparent_60%)]" />
 
+      {/* Radar sweep — slow horizontal beam crosses the grid like a command-center scope */}
+      <motion.div
+        aria-hidden="true"
+        className="absolute inset-y-0 w-[28vw] pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(to right, transparent, rgba(56,189,248,0.10) 50%, transparent)',
+        }}
+        animate={{ x: ['-30vw', '130vw'] }}
+        transition={{
+          duration: 9,
+          repeat: Infinity,
+          ease: 'linear',
+          repeatDelay: 1.5,
+        }}
+      />
+
       {/* Glow orbs */}
       <motion.div
         aria-hidden
