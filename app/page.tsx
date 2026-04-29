@@ -1,5 +1,7 @@
 import SideNav from '@/components/nav/SideNav';
 import ReadingProgress from '@/components/ui/ReadingProgress';
+import KeyboardNav from '@/components/ui/KeyboardNav';
+import BackToTop from '@/components/ui/BackToTop';
 import Hero from '@/components/sections/Hero';
 import ExecutiveSummary from '@/components/sections/ExecutiveSummary';
 import ProductOverview from '@/components/sections/ProductOverview';
@@ -14,6 +16,7 @@ export default function Home() {
   return (
     <main className="relative min-h-screen overflow-x-hidden">
       <ReadingProgress />
+      <KeyboardNav />
       <SideNav />
       <Hero />
       <ExecutiveSummary />
@@ -24,6 +27,7 @@ export default function Home() {
       <MarketingPlan />
       <Team />
       <Partnership />
+      <BackToTop />
     </main>
   );
 }

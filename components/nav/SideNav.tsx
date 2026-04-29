@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Calendar, Menu, X } from 'lucide-react';
 import { sections } from '@/data/sections';
 
 export default function SideNav() {
@@ -89,6 +89,16 @@ export default function SideNav() {
             </button>
           );
         })}
+
+        {/* Persistent CTA — sits beneath the dot rail */}
+        <button
+          type="button"
+          onClick={() => scrollTo('partnership')}
+          className="mt-4 ml-1 group flex items-center gap-2 px-3 py-2 rounded-full bg-accent text-navy-900 font-semibold text-xs shadow-[0_0_18px_rgba(56,189,248,0.45)] hover:bg-accent-glow transition-colors"
+        >
+          <Calendar className="h-3.5 w-3.5" />
+          <span>Book a call</span>
+        </button>
       </nav>
 
       {/* Mobile top bar + drawer */}
@@ -136,6 +146,16 @@ export default function SideNav() {
                 );
               })}
             </ul>
+
+            {/* Persistent CTA in mobile drawer */}
+            <button
+              type="button"
+              onClick={() => scrollTo('partnership')}
+              className="mt-3 w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-accent text-navy-900 font-semibold text-sm shadow-[0_0_18px_rgba(56,189,248,0.45)] hover:bg-accent-glow transition-colors"
+            >
+              <Calendar className="h-4 w-4" />
+              <span>Book a call</span>
+            </button>
           </motion.div>
         )}
       </AnimatePresence>

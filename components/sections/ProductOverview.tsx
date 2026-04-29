@@ -88,6 +88,11 @@ const fieldCapabilities = [
 
 export default function ProductOverview() {
   const [hoverId, setHoverId] = useState<string | null>(null);
+  // Tap/click-locked card (touch parity for hover-to-expand). Tap toggles open/closed,
+  // hover continues to preview on devices with a real pointer.
+  const [pinnedId, setPinnedId] = useState<string | null>(null);
+  const togglePinned = (id: string) =>
+    setPinnedId((prev) => (prev === id ? null : id));
 
   return (
     <SectionWrapper
@@ -129,10 +134,14 @@ export default function ProductOverview() {
         {featurePillars.map((p, i) => {
           const Icon = p.icon;
           const isGold = p.accent === 'gold';
-          const isHover = hoverId === p.id;
+          const isPinned = pinnedId === p.id;
+          // Card shows expanded detail when either tapped/clicked-pinned or hovered.
+          const isOpen = isPinned || hoverId === p.id;
           return (
             <motion.div
               key={p.id}
+              role="button"
+              aria-expanded={isOpen}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -141,10 +150,23 @@ export default function ProductOverview() {
               onMouseLeave={() => setHoverId(null)}
               onFocus={() => setHoverId(p.id)}
               onBlur={() => setHoverId(null)}
+              onClick={() => togglePinned(p.id)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault();
+                  togglePinned(p.id);
+                }
+              }}
               tabIndex={0}
               className={`group relative glass rounded-2xl p-6 cursor-pointer transition-all duration-300 ${
                 isGold ? 'hover:border-gold/40' : 'hover:border-accent/40'
-              } ${isHover ? 'lg:scale-[1.02]' : ''}`}
+              } ${isOpen ? 'lg:scale-[1.02]' : ''} ${
+                isPinned
+                  ? isGold
+                    ? 'border-gold/40 ring-1 ring-gold/20'
+                    : 'border-accent/40 ring-1 ring-accent/20'
+                  : ''
+              }`}
             >
               <div
                 className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none ${
@@ -171,8 +193,8 @@ export default function ProductOverview() {
                 <motion.div
                   initial={false}
                   animate={{
-                    height: isHover ? 'auto' : 0,
-                    opacity: isHover ? 1 : 0,
+                    height: isOpen ? 'auto' : 0,
+                    opacity: isOpen ? 1 : 0,
                   }}
                   transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
                   className="overflow-hidden"
