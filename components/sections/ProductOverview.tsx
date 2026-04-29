@@ -19,6 +19,7 @@ import {
   Leaf,
   ClipboardList,
   Video,
+  Sparkles,
 } from 'lucide-react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 import ProductBanner from '@/components/ui/ProductBanner';
@@ -27,9 +28,11 @@ import { backdrops } from '@/data/backgrounds';
 import SoteriaFieldRoadmap from './SoteriaFieldRoadmap';
 import SoteriaFieldSystem from './SoteriaFieldSystem';
 import SoteriaFieldSIMOPS from './SoteriaFieldSIMOPS';
+import SoteriaAI from './SoteriaAI';
 import { useState } from 'react';
 
 const lmsBannerChips = [
+  { icon: Sparkles, label: 'AI Authoring · Copilot · Audit' },
   { icon: Award, label: 'Industry-Standard Training Formats' },
   { icon: PenLine, label: 'Course Authoring' },
   { icon: Building2, label: 'Multi-Tenant' },
@@ -38,6 +41,7 @@ const lmsBannerChips = [
 ];
 
 const fieldBannerChips = [
+  { icon: Sparkles, label: 'AI Field Assistant · Vision · Translate' },
   { icon: Lock, label: 'LOTO Permit Module' },
   { icon: AlertOctagon, label: 'SIMOPS Coordination' },
   { icon: Leaf, label: 'Environmental Suite' },
@@ -86,7 +90,7 @@ export default function ProductOverview() {
           <span className="text-gradient">One audit trail.</span>
         </>
       }
-      description="Soteria is two distinct products that share one backbone. Soteria LMS is the web platform admins author, configure, and report from. Soteria Field is the iPad app workers permit, learn, and document on. Same compliance posture, two surfaces."
+      description="Soteria is two distinct products that share one backbone — and one AI brain. Soteria LMS is the web platform admins author, configure, and report from. Soteria Field is the iPad app workers permit, learn, and document on. AI is woven through both surfaces, auditable and operator-controlled. Same compliance posture, two surfaces."
       backdrop={backdrops.product}
     >
       {/* ─────────── PRODUCT 01 — SOTERIA LMS ─────────── */}
@@ -167,6 +171,9 @@ export default function ProductOverview() {
           );
         })}
       </div>
+
+      {/* ─────────── CROSS-CUTTING — SOTERIA AI ─────────── */}
+      <SoteriaAI />
 
       {/* ─────────── PRODUCT 02 — SOTERIA FIELD ─────────── */}
       <div className="mt-20">

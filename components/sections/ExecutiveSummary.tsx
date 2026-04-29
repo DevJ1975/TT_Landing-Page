@@ -23,6 +23,8 @@ import {
   Cloud,
   Server,
   Key,
+  Wand2,
+  Mic,
 } from 'lucide-react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
 
@@ -62,6 +64,7 @@ type FeatureChip = {
 };
 
 const lmsFeatures: FeatureChip[] = [
+  { icon: Wand2, label: 'AI Course Authoring & Compliance Copilot' },
   { icon: Award, label: 'Industry-Standard Training Formats' },
   { icon: Building2, label: 'Multi-Tenant (Enterprise + Gov)' },
   { icon: BarChart3, label: 'Analytics & Audit Dashboard' },
@@ -70,6 +73,7 @@ const lmsFeatures: FeatureChip[] = [
 ];
 
 const fieldFeatures: FeatureChip[] = [
+  { icon: Mic, label: 'AI Field Assistant · Vision AI · Live Translate' },
   { icon: Lock, label: 'LOTO Permit Module' },
   { icon: AlertOctagon, label: 'SIMOPS Coordination Engine' },
   { icon: Leaf, label: 'Environmental Compliance Suite' },

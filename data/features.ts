@@ -5,6 +5,7 @@ import {
   Building2,
   PenLine,
   BarChart3,
+  Sparkles,
 } from 'lucide-react';
 
 export type FeaturePillar = {
@@ -69,6 +70,15 @@ export const featurePillars: FeaturePillar[] = [
     detail:
       'Real-time completion, certification expirations, at-risk-roster alerts, and OSHA-recordable export. Drill from organization → site → role → individual. Built-in audit trail satisfies inspection requests in minutes, not weeks.',
     icon: BarChart3,
+    accent: 'blue',
+  },
+  {
+    id: 'ai',
+    title: 'AI Compliance Suite',
+    short: 'AI authoring, copiloting, auditing — embedded everywhere.',
+    detail:
+      'Course Authoring AI turns an SOP into a full lesson in minutes. The Compliance Copilot answers admin questions in plain English. The Audit Assistant compiles inspection packages on demand. Predictive Compliance Risk flags failures before they happen. Every AI action is logged, reviewable, and operator-approved.',
+    icon: Sparkles,
     accent: 'blue',
   },
 ];
