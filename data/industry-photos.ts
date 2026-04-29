@@ -40,17 +40,22 @@ export const industryPhotos: Record<string, IndustryPhoto> = {
     label: 'Construction & Industrial Services',
     caption: 'Crew briefings · digital toolbox-talk delivery',
   },
+  // Gulf of Mexico production rig
+  // Swap target: search "gulf of mexico oil rig" / "offshore production platform"
+  // on unsplash.com and paste the resulting CDN URL if this one doesn't load.
   offshore: {
     id: 'offshore',
-    src: 'https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=1600&q=75',
-    label: 'Offshore Platforms',
-    caption: 'Where SIMOPS coordination is life-critical',
+    src: 'https://images.unsplash.com/photo-1610028290816-5d937a395a49?auto=format&fit=crop&w=1600&q=75',
+    label: 'Gulf of Mexico Production Rig',
+    caption: 'Offshore production platform · where SIMOPS coordination is life-critical',
   },
+  // Onshore land drilling rig (renamed from "refinery")
+  // Swap target: search "land drilling rig" / "oil derrick" on unsplash.com.
   refinery: {
     id: 'refinery',
-    src: 'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=1600&q=75',
-    label: 'Onshore Refineries',
-    caption: 'Process units · PSM-regulated operations',
+    src: 'https://images.unsplash.com/photo-1582640464717-e9ce8da66ee4?auto=format&fit=crop&w=1600&q=75',
+    label: 'Onshore Land Drilling Rig',
+    caption: 'Permian / Bakken-style drilling operations · PSM-regulated work',
   },
   capitol: {
     id: 'capitol',

@@ -218,14 +218,14 @@ export default function ProductOverview() {
         </div>
       </motion.div>
 
-      {/* Soteria Field — SIMOPS Permit Module (flagship O&G differentiator) */}
-      <SoteriaFieldSIMOPS />
-
       {/* Soteria Field — Learning System architecture (triggers, formats, stack, phases) */}
       <SoteriaFieldSystem />
 
       {/* Soteria Field — Coming Soon: Environmental modules roadmap */}
       <SoteriaFieldRoadmap />
+
+      {/* Soteria Field — SIMOPS Permit Module (flagship O&G differentiator, climax block) */}
+      <SoteriaFieldSIMOPS />
 
       {/* Tech stack badges */}
       <motion.div
