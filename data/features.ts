@@ -3,7 +3,7 @@ import {
   ShieldCheck,
   HardHat,
   Building2,
-  Smartphone,
+  PenLine,
   BarChart3,
 } from 'lucide-react';
 
@@ -54,12 +54,12 @@ export const featurePillars: FeaturePillar[] = [
     accent: 'blue',
   },
   {
-    id: 'mobile',
-    title: 'Native Mobile (iPad / iOS)',
-    short: 'Field learning where the work happens.',
+    id: 'authoring',
+    title: 'Course Authoring & Import',
+    short: 'Drag-and-drop authoring or bring your own SCORM.',
     detail:
-      'SwiftUI iPad companion app for floor-level training, offline course playback, photo-based competency capture, and supervisor sign-offs. Designed for hangars, plants, distribution centers, and base operations.',
-    icon: Smartphone,
+      'Web-based authoring for short videos, scenario branching, and quiz banks. Import any SCORM 1.2 / 2004 / cmi5 package, or build native lessons with Soteria’s authoring canvas. Versioning, draft / publish workflow, and per-tenant content libraries.',
+    icon: PenLine,
     accent: 'blue',
   },
   {

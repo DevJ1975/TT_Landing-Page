@@ -27,28 +27,28 @@ export const roadmap: Quarter[] = [
         title: 'Soteria MVP: Core LMS Live',
         detail:
           'Auth, course engine, SCORM 1.2 / 2004 player, learner + admin dashboards. Production deployment on AWS, internal QA complete.',
-        status: 'in-progress',
+        status: 'complete',
       },
       {
         id: 'q1-mfg-pilot',
         title: 'Manufacturing Anchor Pilot — Outbound',
         detail:
           'Mid-market food-production and manufacturing outbound campaign. Goal: one signed 30-day pilot agreement with priority OSHA + GMP courses migrated and baseline compliance metrics captured.',
-        status: 'planned',
+        status: 'complete',
       },
       {
         id: 'q1-mro-demo',
         title: 'MRO Demo Pipeline',
         detail:
           'Tablet-led demos to regional aviation / aerospace MRO operators. Proposals include iPad field-app preview and multi-line rollout plan.',
-        status: 'planned',
+        status: 'complete',
       },
       {
         id: 'q1-jv',
         title: 'Synergy JV LLC Operational',
         detail:
           'Wyoming JV entity stood up, operating agreement executed, joint capability statement finalized.',
-        status: 'in-progress',
+        status: 'complete',
       },
       {
         id: 'q1-sam',
@@ -62,7 +62,7 @@ export const roadmap: Quarter[] = [
         title: 'Anchor Content + Case Study Template',
         detail:
           'EHS thought-leadership cadence locked (1 long-form + 3 LinkedIn posts / month) and a reusable case-study template ready to drop in once the first pilot produces metrics.',
-        status: 'in-progress',
+        status: 'complete',
       },
     ],
   },
@@ -77,42 +77,42 @@ export const roadmap: Quarter[] = [
         title: 'Soteria v1.1: xAPI / LRS Integration',
         detail:
           'Native LRS endpoint, xAPI statement pipeline, and basic statement-query API. Enables granular learner-experience analytics.',
-        status: 'planned',
+        status: 'in-progress',
       },
       {
         id: 'q2-crm',
         title: 'Trainovations CRM: GovCon Pipeline Module',
         detail:
           'Internal CRM extended with capture-management workflow, opportunity scoring, and SAM.gov sync.',
-        status: 'planned',
+        status: 'in-progress',
       },
       {
         id: 'q2-capstmt',
         title: 'First Federal Capability Statement Submitted',
         detail:
           'Capability statement distributed to VA OSDBU and target DoD small business offices. Initial vendor-day conversations scheduled.',
-        status: 'planned',
+        status: 'in-progress',
       },
       {
         id: 'q2-vk',
         title: 'ValleyKey MVP Soft Launch',
         detail:
           'Co-venture product enters soft launch. Validates internal Trainovate playbook for spinning up adjacent SaaS bets.',
-        status: 'planned',
+        status: 'in-progress',
       },
       {
         id: 'q2-2nd-pilot',
         title: 'Second Vertical Pilot Proposal',
         detail:
           'Formal pilot proposal into a second priority vertical (logistics or industrial services), built on Q1 pilot learnings.',
-        status: 'planned',
+        status: 'in-progress',
       },
       {
         id: 'q2-field-alpha',
         title: 'Soteria Field Alpha (LOTO Module)',
         detail:
           'Internal alpha of the LOTO field app: energy-source isolation workflow, QR + photo verification, authorized / affected sign-off.',
-        status: 'planned',
+        status: 'in-progress',
       },
     ],
   },

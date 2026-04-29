@@ -1,14 +1,49 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Lock, ScanLine, ClipboardCheck, Smartphone, ShieldAlert } from 'lucide-react';
+import {
+  Lock,
+  ScanLine,
+  ClipboardCheck,
+  Smartphone,
+  ShieldAlert,
+  Monitor,
+  Tablet,
+  Award,
+  Building2,
+  BarChart3,
+  PenLine,
+  ShieldCheck,
+  HardHat,
+  AlertOctagon,
+  Leaf,
+  ClipboardList,
+  Video,
+} from 'lucide-react';
 import SectionWrapper from '@/components/ui/SectionWrapper';
+import ProductBanner from '@/components/ui/ProductBanner';
 import { featurePillars, techStack } from '@/data/features';
 import { backdrops } from '@/data/backgrounds';
 import SoteriaFieldRoadmap from './SoteriaFieldRoadmap';
 import SoteriaFieldSystem from './SoteriaFieldSystem';
 import SoteriaFieldSIMOPS from './SoteriaFieldSIMOPS';
 import { useState } from 'react';
+
+const lmsBannerChips = [
+  { icon: Award, label: 'SCORM / xAPI / cmi5' },
+  { icon: PenLine, label: 'Course Authoring' },
+  { icon: Building2, label: 'Multi-Tenant' },
+  { icon: BarChart3, label: 'Analytics & Audit' },
+  { icon: ShieldCheck, label: 'FedRAMP-Aligned' },
+];
+
+const fieldBannerChips = [
+  { icon: Lock, label: 'LOTO Permit Module' },
+  { icon: AlertOctagon, label: 'SIMOPS Coordination' },
+  { icon: Leaf, label: 'Environmental Suite' },
+  { icon: ClipboardList, label: 'Inspection Tools' },
+  { icon: Video, label: 'Micro-Learning Player' },
+];
 
 const fieldCapabilities = [
   {
@@ -47,14 +82,30 @@ export default function ProductOverview() {
       eyebrow="What is Soteria?"
       title={
         <>
-          A workforce learning OS — from{' '}
-          <span className="text-gradient">SCORM player to FedRAMP boundary,</span> in one
-          codebase.
+          Two products.{' '}
+          <span className="text-gradient">One audit trail.</span>
         </>
       }
-      description="Six platform pillars, plus Soteria Field — a productized Lockout/Tagout (LOTO) module today, and a full ISO-aligned environmental compliance suite next. Hover any pillar card to expand its detail; click any roadmap module to see the regulations and features behind it."
+      description="Soteria is two distinct products that share one backbone. Soteria LMS is the web platform admins author, configure, and report from. Soteria Field is the iPad app workers permit, learn, and document on. Same compliance posture, two surfaces."
       backdrop={backdrops.product}
     >
+      {/* ─────────── PRODUCT 01 — SOTERIA LMS ─────────── */}
+      <ProductBanner
+        number="01"
+        surface="Surface 01 · Web Platform"
+        product="Soteria LMS"
+        tagline="The compliance LMS — admins author, configure, and report."
+        description="The configuration surface. Web-based course authoring, multi-tenant administration, role-based access, certification tracking, and the analytics + audit dashboard. Where compliance programs are designed and inspected."
+        chips={lmsBannerChips}
+        variant="blue"
+      />
+
+      <div className="mt-8 mb-6">
+        <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent">
+          Soteria LMS — Platform Pillars
+        </p>
+      </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {featurePillars.map((p, i) => {
           const Icon = p.icon;
@@ -117,13 +168,32 @@ export default function ProductOverview() {
         })}
       </div>
 
+      {/* ─────────── PRODUCT 02 — SOTERIA FIELD ─────────── */}
+      <div className="mt-20">
+        <ProductBanner
+          number="02"
+          surface="Surface 02 · iPad Field App"
+          product="Soteria Field"
+          tagline="The operational compliance tool — workers permit, learn, and document on the floor."
+          description="The execution surface. Native iPadOS 17+ app with a permit engine (LOTO today, SIMOPS as the flagship O&G build), an environmental compliance suite, inspection and audit tools, and a micro-learning player. Offline-first, xAPI-aligned. Where compliance actually happens."
+          chips={fieldBannerChips}
+          variant="blue"
+        />
+      </div>
+
+      <div className="mt-8 mb-6">
+        <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent">
+          Soteria Field — Permit Module 01 · Live
+        </p>
+      </div>
+
       {/* Soteria Field — LOTO module spotlight */}
       <motion.div
         initial={{ opacity: 0, y: 24 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-12 relative glass rounded-2xl overflow-hidden isolate"
+        className="relative glass rounded-2xl overflow-hidden isolate"
       >
         {/* Industrial photo behind the LOTO module callout */}
         <img
