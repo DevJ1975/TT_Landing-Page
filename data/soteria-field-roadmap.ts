@@ -25,7 +25,7 @@ export type EnvironmentalModule = {
 };
 
 export const fieldStrategicGoal =
-  'Expand Soteria Field beyond worker safety into environmental compliance — aligning with ISO 14001, ISO 45001, Cal/OSHA Title 8, EPA, and EPCRA to become a full EHS platform. One app. Three ISO standards.';
+  'Extend Soteria Field beyond worker safety into environmental compliance — adding ISO 14001, ISO 50001, EPA, and EPCRA alignment on top of the existing safety foundation (ISO 45001, federal OSHA, Cal/OSHA Title 8). The combination is the full EHS picture in one app.';
 
 export const environmentalModules: EnvironmentalModule[] = [
   {
@@ -368,5 +368,7 @@ export const fieldPitch =
 
 export const fieldRoadmapMeta = {
   lastUpdated: 'April 27, 2026',
-  isoStandards: ['ISO 14001', 'ISO 45001', 'ISO 50001'],
+  // Environmental-only standards. Safety standards (ISO 45001, OSHA, Cal/OSHA T8)
+  // belong on the LOTO / Field safety spotlight, not the environmental roadmap.
+  isoStandards: ['ISO 14001', 'ISO 50001'],
 };

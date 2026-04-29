@@ -257,13 +257,31 @@ export default function ProductOverview() {
         <div className="relative grid grid-cols-1 lg:grid-cols-5 gap-8 p-7 lg:p-10">
           {/* Left: identity */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex flex-wrap items-center gap-2 mb-4">
               <span className="px-2 py-1 rounded-md bg-accent/10 border border-accent/30 text-accent font-mono text-[10px] uppercase tracking-[0.2em]">
                 Featured Module
               </span>
               <span className="px-2 py-1 rounded-md bg-rose-500/10 border border-rose-500/30 text-rose-300 font-mono text-[10px] uppercase tracking-[0.2em]">
-                29 CFR 1910.147
+                Worker Safety
               </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5 mb-4">
+              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-slate-500 mr-1">
+                Aligned with
+              </span>
+              {[
+                '29 CFR 1910.147',
+                'ISO 45001',
+                'Cal/OSHA Title 8',
+                'OSHA General Duty',
+              ].map((reg) => (
+                <span
+                  key={reg}
+                  className="px-2 py-0.5 rounded-full bg-rose-500/8 border border-rose-500/25 text-rose-200 font-mono text-[10px] uppercase tracking-[0.18em]"
+                >
+                  {reg}
+                </span>
+              ))}
             </div>
 
             <div className="flex items-center gap-3 mb-3">
