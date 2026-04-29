@@ -54,10 +54,10 @@ export default function SideNav() {
 
   return (
     <>
-      {/* Desktop side nav */}
+      {/* Desktop side nav — collapses to dots+icon, expands on hover */}
       <nav
         aria-label="Section navigation"
-        className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-1"
+        className="hidden lg:flex fixed left-6 top-1/2 -translate-y-1/2 z-40 flex-col gap-1 group/nav"
       >
         {sections.map((s) => {
           const isActive = active === s.id;
@@ -65,39 +65,49 @@ export default function SideNav() {
             <button
               key={s.id}
               onClick={() => scrollTo(s.id)}
-              className="group flex items-center gap-3 py-1.5 pr-3 text-left"
+              className="flex items-center gap-3 py-1.5 pr-3 text-left"
               aria-current={isActive ? 'true' : undefined}
             >
-              <span className="relative flex items-center justify-center w-6 h-6">
+              <span className="relative flex items-center justify-center w-6 h-6 flex-shrink-0">
                 <span
                   className={`block rounded-full transition-all duration-300 ${
                     isActive
                       ? 'h-2.5 w-2.5 bg-accent shadow-[0_0_12px_rgba(56,189,248,0.8)]'
-                      : 'h-1.5 w-1.5 bg-slate-600 group-hover:bg-slate-400'
+                      : 'h-1.5 w-1.5 bg-slate-600 group-hover/nav:bg-slate-400'
                   }`}
                 />
               </span>
+              {/* Label slides in when nav group is hovered */}
               <span
-                className={`font-mono text-[10px] uppercase tracking-[0.2em] transition-all duration-300 ${
+                className={`grid transition-all duration-300 ${
                   isActive
-                    ? 'opacity-100 translate-x-0 text-white'
-                    : 'opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 text-slate-400'
+                    ? 'grid-cols-[1fr] opacity-100'
+                    : 'grid-cols-[0fr] opacity-0 group-hover/nav:grid-cols-[1fr] group-hover/nav:opacity-100'
                 }`}
               >
-                {s.number} · {s.label}
+                <span
+                  className={`overflow-hidden whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.2em] transition-colors duration-300 ${
+                    isActive ? 'text-white' : 'text-slate-400'
+                  }`}
+                >
+                  {s.number} · {s.label}
+                </span>
               </span>
             </button>
           );
         })}
 
-        {/* Persistent CTA — sits beneath the dot rail */}
+        {/* Persistent CTA — icon only by default, text rolls out on nav hover */}
         <button
           type="button"
           onClick={() => scrollTo('partnership')}
-          className="mt-4 ml-1 group flex items-center gap-2 px-3 py-2 rounded-full bg-accent text-navy-900 font-semibold text-xs shadow-[0_0_18px_rgba(56,189,248,0.45)] hover:bg-accent-glow transition-colors"
+          className="mt-4 ml-1 flex items-center gap-0 group-hover/nav:gap-2 px-2 group-hover/nav:px-3 py-2 rounded-full bg-accent text-navy-900 font-semibold text-xs shadow-[0_0_18px_rgba(56,189,248,0.45)] hover:bg-accent-glow transition-all duration-300"
         >
-          <Calendar className="h-3.5 w-3.5" />
-          <span>Book a call</span>
+          <Calendar className="h-3.5 w-3.5 flex-shrink-0" />
+          {/* Text expands using the grid-cols trick */}
+          <span className="grid grid-cols-[0fr] group-hover/nav:grid-cols-[1fr] transition-all duration-300">
+            <span className="overflow-hidden whitespace-nowrap">Book a call</span>
+          </span>
         </button>
       </nav>
 
